@@ -1,0 +1,45 @@
+{
+    "name": "Inputs",
+    "maps": [
+        {
+            "name": "Inputs",
+            "id": "a68c2aff-0ef2-412e-824e-35a82f92a970",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "29aaf4e2-2e7f-46d7-8bb8-6d615afc0583",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2aa6fe14-51ce-43f4-af65-34ee127424b2",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Inputs",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Inputs",
+            "bindingGroup": "Inputs",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

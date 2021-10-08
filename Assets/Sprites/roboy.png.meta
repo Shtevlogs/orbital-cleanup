@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: b49b5718d7c64184580e41e6b04603bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5687029104808876372
+    second: roboy_0
+  - first:
+      213: 2189373835829023364
+    second: roboy_1
+  - first:
+      213: 485834903605096998
+    second: roboy_2
+  - first:
+      213: -4029893220170784216
+    second: roboy_3
+  - first:
+      213: -4516419281301351587
+    second: roboy_4
+  - first:
+      213: 163250390835065713
+    second: roboy_5
+  - first:
+      213: 4605399806113048203
+    second: roboy_6
+  - first:
+      213: -5398154807389409517
+    second: roboy_7
+  - first:
+      213: -7750862794633466700
+    second: roboy_8
+  - first:
+      213: 1379275202913524317
+    second: roboy_9
+  - first:
+      213: 694546718696662254
+    second: roboy_10
+  - first:
+      213: -2645177298852253864
+    second: roboy_11
+  - first:
+      213: -9071713842244560232
+    second: roboy_12
+  - first:
+      213: 4312518820829161597
+    second: roboy_13
+  - first:
+      213: 8773418994391909337
+    second: roboy_14
+  - first:
+      213: -4934268736322696605
+    second: roboy_15
+  - first:
+      213: -3944140097912315331
+    second: roboy_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: roboy_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 613
+        width: 97
+        height: 169
+      alignment: 9
+      pivot: {x: 0.28081056, y: 0.029591216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca62f8c092d9311b0800000000000000
+      internalID: -5687029104808876372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 555
+        width: 74
+        height: 162
+      alignment: 9
+      pivot: {x: 0.05028843, y: 0.0035588772}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4829f1567e7326e10800000000000000
+      internalID: 2189373835829023364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 657
+        width: 125
+        height: 104
+      alignment: 9
+      pivot: {x: 0.004517578, y: 0.028907776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6223ed055480eb600800000000000000
+      internalID: 485834903605096998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 694
+        width: 116
+        height: 82
+      alignment: 9
+      pivot: {x: 0.98611134, y: 0.29708117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82227f0b771f218c0800000000000000
+      internalID: -4029893220170784216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_4
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 603
+        width: 85
+        height: 160
+      alignment: 9
+      pivot: {x: 0.94589126, y: 0.020463562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53de49b7947251c0800000000000000
+      internalID: -4516419281301351587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_5
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 647
+        width: 77
+        height: 123
+      alignment: 9
+      pivot: {x: 0.4039576, y: 0.026523001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173fa239d5bf34200800000000000000
+      internalID: 163250390835065713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_6
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 343
+        width: 107
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86650429baa9ef30800000000000000
+      internalID: 4605399806113048203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 381
+        width: 110
+        height: 96
+      alignment: 9
+      pivot: {x: 0.9958188, y: -0.00072129566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31facf6adc6e515b0800000000000000
+      internalID: -5398154807389409517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_8
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 326
+        width: 50
+        height: 185
+      alignment: 9
+      pivot: {x: 0.83278686, y: 0.48001295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca417aa576f6490800000000000000
+      internalID: -7750862794633466700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_9
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 270
+        width: 391
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a5a254d7b242310800000000000000
+      internalID: 1379275202913524317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_10
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 379
+        width: 47
+        height: 122
+      alignment: 9
+      pivot: {x: 0.14597142, y: 0.5075771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4e3df8f8683a900800000000000000
+      internalID: 694546718696662254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_11
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 409
+        width: 80
+        height: 128
+      alignment: 9
+      pivot: {x: 0.0031295777, y: 0.016130447}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85febfde2417a4bd0800000000000000
+      internalID: -2645177298852253864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 266
+        height: 176
+      alignment: 9
+      pivot: {x: 0.5139009, y: 0.95695186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ad401135cca1280800000000000000
+      internalID: -9071713842244560232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_13
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 7
+        width: 311
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7865b2d40529db30800000000000000
+      internalID: 4312518820829161597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_14
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 157
+        width: 299
+        height: 52
+      alignment: 9
+      pivot: {x: 0.49690822, y: 0.9088733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d30562871271c970800000000000000
+      internalID: 8773418994391909337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_15
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 194
+        width: 212
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a8b292ab4f58bb0800000000000000
+      internalID: -4934268736322696605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roboy_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 55
+        width: 203
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32ef875a799349c0800000000000000
+      internalID: -3944140097912315331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
