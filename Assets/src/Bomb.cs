@@ -16,6 +16,8 @@ public class Bomb : MonoBehaviour
         if((playermask >> go.layer) == 1)
         {
             //player hit by bomb logic
+            Destroy(gameObject);
+            PlayerController.Instance.Damage();
         }
         else if((pickupmask >> go.layer) == 1)
         {

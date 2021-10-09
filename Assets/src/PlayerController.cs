@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private Vector2 currentMove;
     private Vector2 currentFacingDir = Vector2.up;
@@ -18,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float max_velocity = 20f;
 
+    [SerializeField]
+    private float fuelDrainRate = 0.2f;
+
     private new Rigidbody2D rigidbody2D;
 
     [SerializeField]
@@ -26,6 +35,9 @@ public class PlayerController : MonoBehaviour
     private Transform fireTransform;
 
     private Vector3 basicmodeltransform;
+
+    public float FuelLevel = 1f;
+    public int Health = 3;
 
     private void Start()
     {
@@ -37,8 +49,19 @@ public class PlayerController : MonoBehaviour
     public void OnRightStick(InputAction.CallbackContext value)
     {
         currentMove = value.ReadValue<Vector2>();
-        fireTransform.localScale = new Vector3(1f, currentMove.magnitude, 1f);
-        modelTransform.localScale = basicmodeltransform + new Vector3(0f, -basicmodeltransform.y, 0f) * Mathf.Clamp(currentMove.magnitude, 0f, 0.1f);
+
+        fireTransform.localScale = new Vector3(1f, FuelLevel > 0f ? currentMove.magnitude: 0f, 1f);
+        modelTransform.localScale = basicmodeltransform - new Vector3(0f, basicmodeltransform.y, 0f) * Mathf.Clamp(FuelLevel > 0f ? currentMove.magnitude : 0f, 0f, 0.1f);
+    }
+
+    public void Damage()
+    {
+        Health -= 1;
+
+        if(Health <= 0)
+        {
+            //end level logic
+        }
     }
 
     public void Pickup(Pickup toPickup)
@@ -65,7 +88,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody2D.AddForce(currentMove * thrusterForce, ForceMode2D.Force);
+        if(FuelLevel > 0f)
+        {
+            var fuelDrain = currentMove.magnitude * fuelDrainRate * Time.fixedDeltaTime;
+
+            rigidbody2D.AddForce(currentMove * thrusterForce, ForceMode2D.Force);
+
+            FuelLevel -= fuelDrain;
+        }
 
         rigidbody2D.SetRotation(Vector2.SignedAngle(Vector2.up, currentFacingDir));
 
