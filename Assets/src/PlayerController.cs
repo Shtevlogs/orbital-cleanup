@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentMove;
     private Vector2 currentFacingDir = Vector2.up;
 
+    public bool infiniteFuel = false;
+
     [SerializeField]
     private float rotationPerSecond = 180f;
 
@@ -94,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
             rigidbody2D.AddForce(currentMove * thrusterForce, ForceMode2D.Force);
 
-            FuelLevel -= fuelDrain;
+            FuelLevel -= infiniteFuel ? 0f : fuelDrain;
         }
 
         rigidbody2D.SetRotation(Vector2.SignedAngle(Vector2.up, currentFacingDir));

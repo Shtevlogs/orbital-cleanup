@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    [SerializeField]
     private Transform target;
     [SerializeField]
     private float lead = 1f;
@@ -28,6 +27,7 @@ public class CameraBehaviour : MonoBehaviour
     private void Start()
     {
         camera = GetComponent<Camera>();
+        target = PlayerController.Instance.transform;
     }
 
     public void OnRightStick(InputAction.CallbackContext value)

@@ -14,6 +14,10 @@ public class OrbitHandler : MonoBehaviour
 
     private new Rigidbody2D rigidbody;
 
+    public Planet OrbitalReference;
+
+    private Orbit orbit;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -27,7 +31,7 @@ public class OrbitHandler : MonoBehaviour
     {
         if (!this.isActiveAndEnabled) return;
 
-        var orbit = GravitySystem.GetMyOrbit(transform, StartingVelocity);
+        var orbit = GravitySystem.GetMyOrbit(transform, StartingVelocity, OrbitalReference);
 
         if (orbit == null) return;
 
@@ -51,13 +55,14 @@ public class OrbitHandler : MonoBehaviour
 
         Gizmos.DrawLine(lastPoint, points[0]);
     }
+
     private void FixedUpdate()
     {
-        var gforce = GravitySystem.GetMyGravityForce(transform);
+        var gforce = GravitySystem.GetMyGravityForce(transform, OrbitalReference);
 
-        rigidbody.AddForce(gforce * Time.deltaTime, ForceMode2D.Impulse);
+        rigidbody.velocity += gforce * Time.fixedDeltaTime;
 
-        var orbit = GravitySystem.GetMyOrbit(transform.transform, rigidbody.velocity);
+        orbit = GravitySystem.GetMyOrbit(transform.transform, rigidbody.velocity, OrbitalReference);
 
         orbitalRenderer?.RenderOrbit(orbit);
     }

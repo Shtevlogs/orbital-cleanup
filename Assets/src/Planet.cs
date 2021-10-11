@@ -10,8 +10,6 @@ public class Planet : MonoBehaviour
     public float SurfaceRadius;
     public float AtmosphereRadius;
     public AnimatorController PlanetAnimator;
-    public List<Planet> Moons;
-    public List<PositionVelocity> MoonOrbits;
 
     public Color PlanetCloudColor = Color.white;
 
@@ -33,20 +31,6 @@ public class Planet : MonoBehaviour
         cloudRenderer.color = PlanetCloudColor;
 
         animator.runtimeAnimatorController = PlanetAnimator;
-
-        for(var i = 0; i < Moons.Count; i++)
-        {
-            var moon = Moons[i];
-            var orbit = MoonOrbits[i];
-
-            var moonObject = Instantiate(moon, orbit.Position, Quaternion.identity, transform.parent);
-
-            var orbitHandler = moonObject.GetComponent<OrbitHandler>();
-
-            orbitHandler.StartingVelocity = orbit.Velocity;
-
-            orbitHandler.enabled = true;
-        }
     }
 
     private void OnDrawGizmosSelected()

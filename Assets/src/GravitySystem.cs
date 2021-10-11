@@ -38,28 +38,42 @@ public class GravitySystem : MonoBehaviour
         }
     }
 
-    public static Vector2 GetMyGravityForce(Transform me)
+    public static Vector2 GetMyGravityForce(Transform me, Planet limitedTo = null)
     {
         InitializePlanets();
 
         var gravity = new Vector2();
 
-        foreach (var p in planets) {
-            var distance = Vector2.Distance(p.transform.position, me.position);
-            if(distance > p.AtmosphereRadius)
+        if(limitedTo == null)
+        {
+            foreach (var p in planets)
             {
-                gravity += ((Vector2)(p.transform.position - me.position)).normalized * p.Mass / (distance * distance);
+                var distance = Vector2.Distance(p.transform.position, me.position);
+                if (distance > p.AtmosphereRadius)
+                {
+                    gravity += ((Vector2)(p.transform.position - me.position)).normalized * p.Mass / (distance * distance);
+                }
+            }
+        }
+        else
+        {
+            var distance = Vector2.Distance(limitedTo.transform.position, me.position);
+            if (distance > limitedTo.AtmosphereRadius)
+            {
+                gravity = ((Vector2)(limitedTo.transform.position - me.position)).normalized * limitedTo.Mass / (distance * distance);
             }
         }
 
         return gravity;
     }
 
-    public static Orbit GetMyOrbit(Transform me, Vector2 linearVelocity)
+    public static Orbit GetMyOrbit(Transform me, Vector2 linearVelocity, Planet referenceBody = null)
     {
         InitializePlanets();
 
-        var closestPlanet = planets.OrderBy(x => Vector2.Distance(me.position, x.transform.position)).FirstOrDefault();
+        var closestPlanet = referenceBody == null ? 
+            planets.OrderBy(x => Vector2.Distance(me.position, x.transform.position)).FirstOrDefault() : 
+            referenceBody;
 
         if (closestPlanet == null) return null;
 
