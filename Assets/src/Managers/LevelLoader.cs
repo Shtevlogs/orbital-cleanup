@@ -25,7 +25,7 @@ public class LevelLoader : MonoBehaviour
 
     private void Update()
     {
-        if (!Application.isEditor)
+        if (Application.isPlaying)
         {
             return;
         }
@@ -44,7 +44,7 @@ public class LevelLoader : MonoBehaviour
 
     private void _saveLevel()
     {
-        if (!Application.isEditor)
+        if (Application.isPlaying)
             return;
         if(WorkingLevel == null)
         {
@@ -117,9 +117,11 @@ public class LevelLoader : MonoBehaviour
             player = Instantiate(PlayerPrefab);
         }
         player.transform.position = WorkingLevel.PlayerStart.Position;
-        player.GetComponent<OrbitHandler>().StartingVelocity = WorkingLevel.PlayerStart.Velocity;
+        var playerOrbitHandler = player.GetComponent<OrbitHandler>();
+        playerOrbitHandler.StartingVelocity = WorkingLevel.PlayerStart.Velocity;
+        playerOrbitHandler.ResetVelocity();
 
-        foreach(Transform scrap in ScrapHolder)
+        foreach (Transform scrap in ScrapHolder)
         {
             _destroy(scrap.gameObject);
         }
@@ -130,6 +132,7 @@ public class LevelLoader : MonoBehaviour
             newScrap.transform.position = scrapPlacement.Position;
             newScrapOrbit.StartingVelocity = scrapPlacement.Velocity;
             newScrapOrbit.StartingRotation = scrapPlacement.Rotation;
+            newScrapOrbit.ResetVelocity();
         }
 
         foreach (Transform bomb in BombHolder)
@@ -143,6 +146,7 @@ public class LevelLoader : MonoBehaviour
             newBomb.transform.position = bombPlacement.Position;
             newBombOrbit.StartingVelocity = bombPlacement.Velocity;
             newBombOrbit.StartingRotation = bombPlacement.Rotation;
+            newBombOrbit.ResetVelocity();
         }
 
         foreach (Transform fuel in FuelHolder)
@@ -156,12 +160,16 @@ public class LevelLoader : MonoBehaviour
             newFuel.transform.position = fuelPlacement.Position;
             newFuelOrbit.StartingVelocity = fuelPlacement.Velocity;
             newFuelOrbit.StartingRotation = fuelPlacement.Rotation;
+            newFuelOrbit.ResetVelocity();
         }
+
+        if(Application.isPlaying)
+            MusicController.PlayTrack(WorkingLevel.Music);
     }
 
     private void _destroy(GameObject go)
     {
-        if (Application.isEditor)
+        if (!Application.isPlaying)
         {
             DestroyImmediate(go);
         }

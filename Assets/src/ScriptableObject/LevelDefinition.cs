@@ -15,4 +15,5 @@ public class LevelDefinition : ScriptableObject
     public List<PositionVelocity> Bombs;
     public List<PositionVelocity> Fuels;
 
+    public AudioClip Music;
 }

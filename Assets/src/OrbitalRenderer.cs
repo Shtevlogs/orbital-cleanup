@@ -11,12 +11,14 @@ public class OrbitalRenderer : MonoBehaviour
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer = lineRenderer == null ? GetComponent<LineRenderer>() : lineRenderer;
     }
 
     public void RenderOrbit(Orbit orbit)
     {
-        if(orbit == null)
+        lineRenderer = lineRenderer == null ? GetComponent<LineRenderer>() : lineRenderer;
+
+        if (orbit == null)
         {
             lineRenderer.positionCount = 0;
             lineRenderer.SetPositions(new Vector3[0]);

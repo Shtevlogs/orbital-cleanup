@@ -20,11 +20,21 @@ public class OrbitHandler : MonoBehaviour
 
     private void Start()
     {
+        ResetVelocity();
+    }
+
+    public void ResetVelocity()
+    {
         rigidbody = GetComponent<Rigidbody2D>();
+
         rigidbody.velocity = StartingVelocity;
         rigidbody.angularVelocity = StartingRotation;
 
-        orbitalRenderer = GetComponentInChildren<OrbitalRenderer>();
+        orbitalRenderer = orbitalRenderer == null ? GetComponentInChildren<OrbitalRenderer>() : orbitalRenderer;
+
+        if (orbitalRenderer == null) return;
+
+        orbitalRenderer.RenderOrbit(GravitySystem.GetMyOrbit(rigidbody.transform, rigidbody.velocity, OrbitalReference));
     }
 
     private void OnDrawGizmosSelected()

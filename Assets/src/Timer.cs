@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
 
     public int StartingTime = 60;
 
+    public bool IgnorePause = false;
+
     private bool timerStarted = false;
     private float currentTime;
     private int previousTickTime;
@@ -35,6 +37,7 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         if (!timerStarted) return;
+        if (GameStateManager.IsPaused && !IgnorePause) return;
 
         currentTime -= Time.unscaledDeltaTime;
 

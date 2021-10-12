@@ -32,6 +32,9 @@ public class GameStateManager : MonoBehaviour
         //start loading level
         levelLoader.BeginLevelLoad();
 
+        //reset planets
+        PlanetManager.ResetPlanets();
+
         //start countdown
         countdownTimer.gameObject.SetActive(true);
         countdownTimer.StartTimer();
@@ -43,6 +46,20 @@ public class GameStateManager : MonoBehaviour
     public static void Retry()
     {
         Instance.Initialize();
+    }
+
+    public static void Pause()
+    {
+        IsPaused = true;
+        //pause physics
+        Time.timeScale = 0f;
+    }
+
+    public static void UnPause()
+    {
+        IsPaused = false;
+        //pause physics
+        Time.timeScale = 1f;
     }
 
     private void _onCountdownEnd()
@@ -62,18 +79,13 @@ public class GameStateManager : MonoBehaviour
     {
         if (active)
         {
-            IsPaused = true;
-            //pause physics
-            Time.timeScale = 0f;
-            //turn down music
+            Pause();
             //position introduction camera
         }
         else
         {
-            IsPaused = false;
-            //unpause physics
+            UnPause();
             Time.timeScale = 1f;
-            //turn up music
             //release intro camera
         }
     }
