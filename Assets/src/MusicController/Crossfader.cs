@@ -16,13 +16,35 @@ public class Crossfader
     private bool fading = false;
     private IEnumerator nextFade;
 
+    private bool active;
+
     public bool IsPlaying()
     {
         return Source1.isPlaying || Source2.isPlaying;
     }
 
+    public void Toggle(bool active) 
+    {
+        this.active = active;
+
+        if (active)
+        {
+            _getSource(currentSource).Play();
+        }
+        else
+        {
+            Source1.Stop();
+            Source2.Stop();
+        }
+    }
+
     public void SetVolume(float volume)
     {
+        if (!active)
+        {
+            volume = 0f;
+        }
+
         Level = volume;
         if (!fading)
         {
@@ -61,8 +83,8 @@ public class Crossfader
 
             var progress = startingTime == 0f ? 1f : (startingTime - time) / startingTime;
 
-            fadeOutSource.volume = Level * (1f - progress);
-            fadeInSource.volume = Level * progress;
+            fadeOutSource.volume = active ? Level * (1f - progress) : 0f;
+            fadeInSource.volume = active ? Level * progress : 0f;
 
             yield return null;
         } while (time > 0f);

@@ -41,11 +41,24 @@ public class PlayerController : MonoBehaviour
     public float FuelLevel = 1f;
     public int Health = 3;
 
+    [SerializeField]
+    private AudioReference thrusterAudio;
+
+    [SerializeField]
+    private AudioReference pickupAudio;
+    [SerializeField]
+    private AudioClip fuelPickupClip;
+    [SerializeField]
+    private AudioClip scrapPickupClip;
+
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
 
         basicmodeltransform = modelTransform.localScale;
+
+        thrusterAudio.Init();
+        pickupAudio.Init();
     }
 
     public void OnRightStick(InputAction.CallbackContext value)
@@ -69,6 +82,15 @@ public class PlayerController : MonoBehaviour
     public void Pickup(Pickup toPickup)
     {
         toPickup.PickupAction(this);
+
+        if(toPickup is Scrap)
+        {
+            pickupAudio.Play(scrapPickupClip);
+        }
+        else if(toPickup is Fuel)
+        {
+            pickupAudio.Play(fuelPickupClip);
+        }
     }
 
     private void Update()
@@ -94,9 +116,15 @@ public class PlayerController : MonoBehaviour
         {
             var fuelDrain = currentMove.magnitude * fuelDrainRate * Time.fixedDeltaTime;
 
+            thrusterAudio.Fade(currentMove.magnitude);
+
             rigidbody2D.AddForce(currentMove * thrusterForce, ForceMode2D.Force);
 
             FuelLevel -= infiniteFuel ? 0f : fuelDrain;
+        }
+        else
+        {
+            thrusterAudio.Fade(0f);
         }
 
         rigidbody2D.SetRotation(Vector2.SignedAngle(Vector2.up, currentFacingDir));

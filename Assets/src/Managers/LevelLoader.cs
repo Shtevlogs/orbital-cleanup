@@ -112,11 +112,14 @@ public class LevelLoader : MonoBehaviour
         }
 
         var player = Transform.FindObjectOfType<PlayerController>();
-        if(player == null)
+        if(player != null)
         {
-            player = Instantiate(PlayerPrefab);
+            _destroy(player.gameObject);
         }
+        player = Instantiate(PlayerPrefab);
+
         player.transform.position = WorkingLevel.PlayerStart.Position;
+
         var playerOrbitHandler = player.GetComponent<OrbitHandler>();
         playerOrbitHandler.StartingVelocity = WorkingLevel.PlayerStart.Velocity;
         playerOrbitHandler.ResetVelocity();

@@ -18,6 +18,9 @@ public class MusicController : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        Settings.MusicToggle.OnSettingChanged += _onMusicToggle;
+        _onMusicToggle(Settings.MusicToggle.Value);
+
         Instance = this;
     }
 
@@ -31,6 +34,11 @@ public class MusicController : MonoBehaviour
     private void Start()
     {
         currentVolume = TargetVolume;
+    }
+
+    private void _onMusicToggle(bool value)
+    {
+        AudioCrossfader.Toggle(value);
     }
 
     private void Update()

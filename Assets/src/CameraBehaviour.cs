@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    private Transform target;
     [SerializeField]
     private float lead = 1f;
     [SerializeField]
@@ -27,7 +26,6 @@ public class CameraBehaviour : MonoBehaviour
     private void Start()
     {
         camera = GetComponent<Camera>();
-        target = PlayerController.Instance.transform;
     }
 
     public void OnRightStick(InputAction.CallbackContext value)
@@ -37,6 +35,8 @@ public class CameraBehaviour : MonoBehaviour
 
     private void Update()
     {
+        var target = PlayerController.Instance.transform;
+
         leadLocation = Vector2.Lerp(leadLocation, leadTargetLocation, transition * Time.deltaTime);
         var leadPos = target.position + (Vector3)leadLocation;
         transform.position = new Vector3(

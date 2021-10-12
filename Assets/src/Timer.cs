@@ -18,6 +18,17 @@ public class Timer : MonoBehaviour
     private float currentTime;
     private int previousTickTime;
 
+    [SerializeField]
+    private AudioReference tickSound;
+
+    private void Start()
+    {
+        if (tickSound != null)
+        {
+            tickSound.Init();
+        }
+    }
+
     public void StartTimer()
     {
         timerStarted = true;
@@ -44,10 +55,16 @@ public class Timer : MonoBehaviour
         var tickTime = (int)(currentTime+1f);
         if(tickTime != previousTickTime && tickTime >= 0f)
         {
+            if(tickSound != null)
+            {
+                tickSound.Play();
+            }
             OnTimerTick?.Invoke(tickTime);
         }
 
-        if(currentTime <= 0)
+        previousTickTime = tickTime;
+
+        if (currentTime <= 0)
         {
             OnTimerEnd?.Invoke();
             timerStarted = false;

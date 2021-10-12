@@ -23,11 +23,22 @@ public class RoundEndUI : MonoBehaviour
 
     public Button NextLevelButton;
 
+    public AudioClip SuccessClip;
+    public AudioClip FailClip;
+    public AudioReference SuccessFailSound;
+
     private bool success;
+
+    private void Start()
+    {
+        SuccessFailSound.Init();
+    }
 
     public void Activate(bool success, string message, int score, int time, int scrapLost)
     {
         this.success = success;
+
+        SuccessFailSound.Play(success ? SuccessClip : FailClip);
 
         NextLevelButton.interactable = success;
         HeaderMessage.text = message;
