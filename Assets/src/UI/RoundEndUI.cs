@@ -52,7 +52,7 @@ public class RoundEndUI : MonoBehaviour
 
     public void OnBack()
     {
-        //go to level select
+        GameSceneLoader.Instance.LoadLevelSelect();
     }
 
     public void OnRetry()

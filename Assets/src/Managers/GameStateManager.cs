@@ -22,7 +22,10 @@ public class GameStateManager : MonoBehaviour
         Instance = this;
         countdownTimer.OnTimerEnd += _onCountdownEnd;
         gameTimer.OnTimerEnd += _onRoundEnd;
+    }
 
+    private void Start()
+    {
         Initialize();
     }
 

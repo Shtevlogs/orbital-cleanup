@@ -15,6 +15,11 @@ public class GravitySystem : MonoBehaviour
     [SerializeField]
     private Transform planetList;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void OnEnable()
     {
         Instance = this;
@@ -23,7 +28,7 @@ public class GravitySystem : MonoBehaviour
 
     public static void InitializePlanets()
     {
-        if(planets.Count > 0)
+        if(planets.Count > 0 || Instance == null)
         {
             return;
         }

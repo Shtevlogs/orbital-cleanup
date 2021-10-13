@@ -13,6 +13,7 @@ public class LevelLoader : MonoBehaviour
 
     public bool SaveLevel = false;
     public bool LoadLevel = false;
+    public bool ClearLevel = false;
 
     public Transform ScrapHolder;
     public Transform BombHolder;
@@ -39,6 +40,11 @@ public class LevelLoader : MonoBehaviour
         {
             _loadLevel();
             LoadLevel = false;
+        }
+        else if (ClearLevel)
+        {
+            _clearLevel();
+            ClearLevel = false;
         }
     }
 
@@ -93,7 +99,7 @@ public class LevelLoader : MonoBehaviour
         var playerOrbitHandler = player.gameObject.GetComponent<OrbitHandler>();
         WorkingLevel.PlayerStart = new PositionVelocity { Position = playerOrbitHandler.transform.position, Velocity = playerOrbitHandler.StartingVelocity };
 
-        WorkingLevel.LevelScene = SceneManager.GetActiveScene();
+        WorkingLevel.LevelScene = (GameSceneLoader.GameScene)SceneManager.GetActiveScene().buildIndex;
 
         EditorUtility.SetDirty(WorkingLevel);
     }
@@ -103,20 +109,45 @@ public class LevelLoader : MonoBehaviour
         _loadLevel();
     }
 
+    private void _clearLevel()
+    {
+        var player = Transform.FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            _destroy(player.gameObject);
+        }
+
+        foreach (Transform scrap in ScrapHolder)
+        {
+            _destroy(scrap.gameObject);
+        }
+        foreach (Transform bomb in BombHolder)
+        {
+            _destroy(bomb.gameObject);
+        }
+        foreach (Transform fuel in FuelHolder)
+        {
+            _destroy(fuel.gameObject);
+        }
+    }
+
     private void _loadLevel()
     {
+        _clearLevel();
+
+        if(NextLevel != null)
+        {
+            WorkingLevel = NextLevel;
+            NextLevel = null;
+        }
+
         if (WorkingLevel == null)
         {
             Debug.LogError("please create a level and put it in the working level slot");
             return;
         }
 
-        var player = Transform.FindObjectOfType<PlayerController>();
-        if(player != null)
-        {
-            _destroy(player.gameObject);
-        }
-        player = Instantiate(PlayerPrefab);
+        var player = Instantiate(PlayerPrefab, transform.parent);
 
         player.transform.position = WorkingLevel.PlayerStart.Position;
 
@@ -124,10 +155,6 @@ public class LevelLoader : MonoBehaviour
         playerOrbitHandler.StartingVelocity = WorkingLevel.PlayerStart.Velocity;
         playerOrbitHandler.ResetVelocity();
 
-        foreach (Transform scrap in ScrapHolder)
-        {
-            _destroy(scrap.gameObject);
-        }
         foreach(var scrapPlacement in WorkingLevel.Scraps)
         {
             var newScrap = Instantiate(ScrapPrefab, ScrapHolder);
@@ -138,10 +165,6 @@ public class LevelLoader : MonoBehaviour
             newScrapOrbit.ResetVelocity();
         }
 
-        foreach (Transform bomb in BombHolder)
-        {
-            _destroy(bomb.gameObject);
-        }
         foreach (var bombPlacement in WorkingLevel.Bombs)
         {
             var newBomb = Instantiate(BombPrefab, BombHolder);
@@ -152,10 +175,6 @@ public class LevelLoader : MonoBehaviour
             newBombOrbit.ResetVelocity();
         }
 
-        foreach (Transform fuel in FuelHolder)
-        {
-            _destroy(fuel.gameObject);
-        }
         foreach (var fuelPlacement in WorkingLevel.Fuels)
         {
             var newFuel = Instantiate(FuelPrefab, FuelHolder);

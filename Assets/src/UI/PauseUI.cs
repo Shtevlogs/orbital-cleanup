@@ -51,7 +51,7 @@ public class PauseUI : MonoBehaviour
 
     public void OnLevelSelect()
     {
-        //go to level select
+        GameSceneLoader.Instance.LoadLevelSelect();
     }
 
     public void OnRestart()

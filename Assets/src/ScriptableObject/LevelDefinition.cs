@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
-[SerializeField]
+[Serializable]
 [CreateAssetMenu(fileName = "0", menuName = "ScriptableObjects/Level", order = 1)]
 public class LevelDefinition : ScriptableObject
 {
-    public Scene LevelScene;
+    public GameSceneLoader.GameScene LevelScene;
 
     public PositionVelocity PlayerStart;
 
@@ -16,4 +17,6 @@ public class LevelDefinition : ScriptableObject
     public List<PositionVelocity> Fuels;
 
     public AudioClip Music;
+
+    public string Name;
 }

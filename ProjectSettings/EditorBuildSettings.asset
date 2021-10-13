@@ -8,4 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Empty.unity
+    guid: 920367ff456f77e408cacce67c84e2fc
+  - enabled: 1
+    path: Assets/Scenes/SplashPage.unity
+    guid: f10ab748776e5444aa9d1a61b9ff3c9d
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b6d1868f15dcdcc4fbe10b46460c274c
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 3aa463387719c7f46bd2bea3bad9ec16
+  - enabled: 1
+    path: Assets/Scenes/Planets/EarthTraining.unity
+    guid: 0988ebb6ad618e24f8b7ec10ecdbfa44
+  - enabled: 1
+    path: Assets/Scenes/Planets/Earth.unity
+    guid: 88e4b852a0c67764981bf81464c6de71
+  - enabled: 1
+    path: Assets/Scenes/Planets/EarthAndMoon.unity
+    guid: 36ec229d5d3ef7647a897e03a7c1a1a7
+  - enabled: 1
+    path: Assets/Scenes/Planets/Mars.unity
+    guid: c629f59bc2fe1c04a8a08023e520a5ac
   m_configObjects: {}
