@@ -16,7 +16,7 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField]
     private Vector2 center = Vector2.zero;
     [SerializeField]
-    private Vector2 maxBounds;
+    public Vector2 MaxBounds;
 
     [SerializeField]
     private float minZoom = 4f;
@@ -40,8 +40,8 @@ public class CameraBehaviour : MonoBehaviour
         leadLocation = Vector2.Lerp(leadLocation, leadTargetLocation, transition * Time.deltaTime);
         var leadPos = target.position + (Vector3)leadLocation;
         transform.position = new Vector3(
-            Mathf.Clamp(leadPos.x, -maxBounds.x, maxBounds.x), 
-            Mathf.Clamp(leadPos.y, -maxBounds.y, maxBounds.y),
+            Mathf.Clamp(leadPos.x, -MaxBounds.x, MaxBounds.x), 
+            Mathf.Clamp(leadPos.y, -MaxBounds.y, MaxBounds.y),
             transform.position.z);
 
         camera.orthographicSize = Mathf.Clamp(((Vector2)transform.position - center).magnitude, minZoom, 100f);

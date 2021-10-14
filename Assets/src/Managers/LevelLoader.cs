@@ -8,6 +8,7 @@ using UnityEditor;
 public class LevelLoader : MonoBehaviour
 {
     public static LevelDefinition NextLevel;
+    public static LevelLocation CurrentLevelLocation;
 
     public LevelDefinition WorkingLevel;
 
@@ -101,6 +102,12 @@ public class LevelLoader : MonoBehaviour
 
         WorkingLevel.LevelScene = (GameSceneLoader.GameScene)SceneManager.GetActiveScene().buildIndex;
 
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
+        if (cameraBehaviour != null)
+        {
+            WorkingLevel.MaxCameraRange = cameraBehaviour.MaxBounds.x;
+        }
+
         EditorUtility.SetDirty(WorkingLevel);
     }
 
@@ -128,6 +135,14 @@ public class LevelLoader : MonoBehaviour
         foreach (Transform fuel in FuelHolder)
         {
             _destroy(fuel.gameObject);
+        }
+
+        Scrap.ScrapInLevel = 0;
+
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
+        if(cameraBehaviour != null)
+        {
+            cameraBehaviour.MaxBounds = Vector2.one * 9f;
         }
     }
 
@@ -187,6 +202,12 @@ public class LevelLoader : MonoBehaviour
 
         if(Application.isPlaying)
             MusicController.PlayTrack(WorkingLevel.Music);
+
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
+        if (cameraBehaviour != null)
+        {
+            cameraBehaviour.MaxBounds = Vector2.one * WorkingLevel.MaxCameraRange;
+        }
     }
 
     private void _destroy(GameObject go)

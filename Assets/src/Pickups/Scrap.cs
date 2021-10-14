@@ -18,9 +18,10 @@ public class Scrap : Pickup
     public override void PickupAction(PlayerController player)
     {
         ScrapInLevel--;
-        if(ScrapInLevel <= 0)
+        player.ScrapCollectedCount++;
+        if (ScrapInLevel <= 0)
         {
-            //end level logic
+            GameStateManager.EndRound(true, "Scrap Collected!");
         }
         base.PickupAction(player);
     }
@@ -31,7 +32,7 @@ public class Scrap : Pickup
         PlayerController.Instance.Damage();
         if (ScrapInLevel <= 0)
         {
-            //end level logic
+            GameStateManager.EndRound(true, "Scrap Collected!");
         }
         base.Destroy();
     }

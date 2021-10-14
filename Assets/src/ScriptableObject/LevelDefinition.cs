@@ -19,4 +19,7 @@ public class LevelDefinition : ScriptableObject
     public AudioClip Music;
 
     public string Name;
+    public int Time = -1;
+
+    public float MaxCameraRange = 9f;
 }

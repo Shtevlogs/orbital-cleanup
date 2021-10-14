@@ -66,11 +66,20 @@ public class GameSceneLoader : MonoBehaviour
         currentScene = GameScene.LevelSelect;
     }
 
-    public void LoadLevelScene(LevelDefinition level)
+    public void LoadLevelScene(LevelLocation location)
     {
+        var level = LevelUnlocks.GetLevel(location);
+
+        if(level == null)
+        {
+            Debug.LogError("Asked To Load A Level That Doesn't Exist");
+            return;
+        }
+
         loadingUI.Activate();
 
         LevelLoader.NextLevel = level;
+        LevelLoader.CurrentLevelLocation = location;
 
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)currentScene));
         scenesLoading.Add(SceneManager.LoadSceneAsync((int)level.LevelScene, LoadSceneMode.Additive));

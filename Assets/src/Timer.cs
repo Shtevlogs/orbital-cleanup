@@ -37,6 +37,11 @@ public class Timer : MonoBehaviour
         previousTickTime = StartingTime;
     }
 
+    public void StopTimer()
+    {
+        timerStarted = false;
+    }
+
     public void ResetTimer()
     {
         timerStarted = false;

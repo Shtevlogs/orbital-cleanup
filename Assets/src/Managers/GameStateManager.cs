@@ -17,6 +17,9 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private Timer gameTimer;
 
+    private float roundStartTime;
+    private bool roundEnded = false;
+
     private void Awake()
     {
         Instance = this;
@@ -31,6 +34,8 @@ public class GameStateManager : MonoBehaviour
 
     private void Initialize()
     {
+        roundEnded = false;
+
         _overviewMode(true);
         //start loading level
         levelLoader.BeginLevelLoad();
@@ -42,8 +47,16 @@ public class GameStateManager : MonoBehaviour
         countdownTimer.gameObject.SetActive(true);
         countdownTimer.StartTimer();
 
-        //reset round timer
-        gameTimer.ResetTimer();
+        if(levelLoader.WorkingLevel.Time > 0)
+        {
+            //reset round timer
+            gameTimer.StartingTime = levelLoader.WorkingLevel.Time;
+            gameTimer.ResetTimer();
+        }
+        else
+        {
+            gameTimer.gameObject.SetActive(false);
+        }
     }
 
     public static void Retry()
@@ -68,14 +81,44 @@ public class GameStateManager : MonoBehaviour
     private void _onCountdownEnd()
     {
         _overviewMode(false);
-        gameTimer.StartTimer();
+        if(gameTimer.gameObject.activeSelf) gameTimer.StartTimer();
         countdownTimer.gameObject.SetActive(false);
+        roundStartTime = Time.time;
     }
 
     private void _onRoundEnd()
     {
         _overviewMode(true);
-        RoundEndUI.Instance.Activate(false, "Time Out!", 0, gameTimer.StartingTime, Scrap.ScrapInLevel);
+        EndRound(false, "Time Out!");
+    }
+
+    public static void EndRound(bool success, string message)
+    {
+        if (Instance.roundEnded) return;
+
+        Instance.roundEnded = true;
+
+        var levelDef = Instance.levelLoader.WorkingLevel;
+
+        var totalTime = Time.time - Instance.roundStartTime;
+
+        var timePercent = 1f - (Instance.gameTimer.StartingTime == 0 ? (totalTime / 120f) : (totalTime / (float)Instance.gameTimer.StartingTime));
+        var scrapsCollected = PlayerController.Instance.ScrapCollectedCount;
+        var scrapsLost = levelDef.Scraps.Count - PlayerController.Instance.ScrapCollectedCount;
+        var playerHealthPercent = (float)PlayerController.Instance.Health / 3f;
+
+        var score = (int)Mathf.Clamp(1000f * timePercent + 100f * scrapsCollected - 200f * scrapsLost + 300f * playerHealthPercent, 0f, float.MaxValue);
+
+        Instance.gameTimer.StopTimer();
+        RoundEndUI.Instance.Activate(success, message, score, (int)totalTime, scrapsLost);
+
+        //save data
+        var currentLevelData = SaveData.Load(LevelLoader.CurrentLevelLocation);
+        currentLevelData.BestTime = currentLevelData.BestTime == -1 ? (int)totalTime : Mathf.Min(currentLevelData.BestTime, (int)totalTime);
+        currentLevelData.HighScore = Mathf.Max(currentLevelData.HighScore, score);
+        currentLevelData.Completed = currentLevelData.Completed || success;
+        SaveData.Save(LevelLoader.CurrentLevelLocation, currentLevelData);
+        SaveData.Persist();
     }
 
     private void _overviewMode(bool active)

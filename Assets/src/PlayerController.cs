@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
 
     public float FuelLevel = 1f;
     public int Health = 3;
+    [NonSerialized]
+    public int ScrapCollectedCount = 0;
 
     [SerializeField]
     private AudioReference thrusterAudio;
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if(Health <= 0)
         {
-            //end level logic
+            GameStateManager.EndRound(false, "Mission Failed!");
         }
     }
 

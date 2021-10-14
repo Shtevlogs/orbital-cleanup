@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  LevelScene: 5
+  PlayerStart:
+    Position: {x: 0, y: -3.15}
+    Velocity: {x: -2.5, y: 0}
+    Rotation: 0
+  Scraps:
+  - Position: {x: 4.207, y: -0.097}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
+  Bombs:
+  - Position: {x: 6.11, y: 0.97}
+    Velocity: {x: 0, y: -2}
+    Rotation: 170
+  Fuels:
+  - Position: {x: -4.96, y: 0.07}
+    Velocity: {x: 0, y: 2}
+    Rotation: -42
+  Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
+  Name: Orbital Training

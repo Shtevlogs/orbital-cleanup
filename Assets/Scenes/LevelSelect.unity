@@ -1149,9 +1149,47 @@ MonoBehaviour:
   PlanetTitle: {fileID: 812729250}
   earthLevels:
   - {fileID: 11400000, guid: b0e6a9c6b37cdac4dbf8deefdc7a3dcf, type: 2}
+  - {fileID: 11400000, guid: aad7aa020737fd34783d8e7521b0034b, type: 2}
+  - {fileID: 11400000, guid: b6e53fab8b41eda499c520d5b72328cd, type: 2}
+  - {fileID: 11400000, guid: 6a6836a9f078dd54fb1d664bb7c6da65, type: 2}
+  - {fileID: 11400000, guid: f2ac0d7378b18ee4f98c4d0263c6c800, type: 2}
+  - {fileID: 11400000, guid: fc25a53930867e840b882a8aad040a97, type: 2}
+  - {fileID: 11400000, guid: 4f5061c2591086744a6259d827011a66, type: 2}
+  - {fileID: 11400000, guid: 5b5acd8ee8e5d5d48a2e674f88924f9f, type: 2}
+  - {fileID: 11400000, guid: 6bec03e9f9454f9419494e232366bd42, type: 2}
+  - {fileID: 11400000, guid: 2398b30b3da210549929627bb0eb3c42, type: 2}
+  - {fileID: 11400000, guid: fe3872fb970f5b340b03c6ced84bda38, type: 2}
+  - {fileID: 11400000, guid: 357c0aaa101bf9d41af627f13386cc96, type: 2}
+  - {fileID: 11400000, guid: 2b63cff74a962074598836275fca8d02, type: 2}
+  - {fileID: 11400000, guid: d30f51c090ad7114a86f6509d7190fb1, type: 2}
+  - {fileID: 11400000, guid: 0b8601ba53a5286438556ba5bb35093c, type: 2}
   marsLevels:
   - {fileID: 11400000, guid: 5e3eb41c2a32ac44f88219c2317f9f21, type: 2}
-  gloopLevels: []
+  - {fileID: 11400000, guid: a44c898cc8278d840bd4d786024d555e, type: 2}
+  - {fileID: 11400000, guid: 607576496b25d6444aadeb657c070842, type: 2}
+  - {fileID: 11400000, guid: 04c80be8fcdf4ae4da4939019c2855f0, type: 2}
+  - {fileID: 11400000, guid: 58ac2cc945c5c1544b868e07282df411, type: 2}
+  - {fileID: 11400000, guid: 72bfb41eeafa67643808c3823c4249bd, type: 2}
+  - {fileID: 11400000, guid: c3193b4264df45049a7ee0cb4f493480, type: 2}
+  - {fileID: 11400000, guid: a48571292a847a74b9b4c86b3cf8595f, type: 2}
+  - {fileID: 11400000, guid: cc595b10f55a14643920c3df7fc509bd, type: 2}
+  - {fileID: 11400000, guid: 26d94ba9c58cc504d8dcf40b6d757135, type: 2}
+  gloopLevels:
+  - {fileID: 11400000, guid: 933260f664250174994dafd7d696f97f, type: 2}
+  - {fileID: 11400000, guid: 41faaa188e2e7ed48ac10e4380e105a5, type: 2}
+  - {fileID: 11400000, guid: 7a54dcc23d1a24e48865b115f69b01e2, type: 2}
+  - {fileID: 11400000, guid: 6936a5760dff4e546b6fb0586b5af2cd, type: 2}
+  - {fileID: 11400000, guid: 629c80e8b4321f24cb1c6017edb2324f, type: 2}
+  - {fileID: 11400000, guid: 7f8ee6f5cd258e34cb9fdb4ca474d5de, type: 2}
+  - {fileID: 11400000, guid: e4545e6d60b8f3c4398e5c12201f4b25, type: 2}
+  - {fileID: 11400000, guid: 4b1aa56a9ca755147ac04b81e155fdca, type: 2}
+  - {fileID: 11400000, guid: b99b1cc104e9261488838cbde3c6fef7, type: 2}
+  - {fileID: 11400000, guid: 6196e8e65f5c199489f2ff8e60352c92, type: 2}
+  - {fileID: 11400000, guid: 7249ad5ea293cdd45928ff6f2e6d0860, type: 2}
+  - {fileID: 11400000, guid: 25e60b6943ccc4346abc5ecccbeebdbb, type: 2}
+  - {fileID: 11400000, guid: d03c39a7ebac8534c8186fdeff5040b5, type: 2}
+  - {fileID: 11400000, guid: fe288b6a2d48d224f9f26648992f4d05, type: 2}
+  - {fileID: 11400000, guid: c918917ee8adfe74588e63216ab34808, type: 2}
 --- !u!1 &1050379224
 GameObject:
   m_ObjectHideFlags: 0

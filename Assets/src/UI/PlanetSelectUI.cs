@@ -13,7 +13,7 @@ public class PlanetSelectUI : MonoBehaviour
     public bool PlanetDiscovered;
     public float PlanetScale = 1.0f;
 
-    public LevelSelectUI.LevelCategory LevelCategory;
+    public LevelCategory LevelCategory;
 
     [SerializeField]
     private Image PlanetRenderer;
@@ -35,6 +35,8 @@ public class PlanetSelectUI : MonoBehaviour
 
     public void Awake()
     {
+        PlanetDiscovered = LevelUnlocks.GetUnlockStatus(new LevelLocation { Category = LevelCategory, Index = 0 });
+
         UpdateValues();
         startingPosition = transform.localPosition;
 

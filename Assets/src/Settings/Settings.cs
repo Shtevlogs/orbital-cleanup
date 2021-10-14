@@ -29,26 +29,16 @@ public class Settings : MonoBehaviour
 
     private void _pullSettings()
     {
-        VolumeToggle.Value = GetBool(volumeToggle_key);
-        VolumeToggle.OnSettingChanged += (value) => { 
-            SetBool(volumeToggle_key, value);
+        VolumeToggle.Value = Extensions.GetBool(volumeToggle_key);
+        VolumeToggle.OnSettingChanged += (value) => {
+            Extensions.SetBool(volumeToggle_key, value);
             PlayerPrefs.Save();
         };
 
-        MusicToggle.Value = GetBool(musicToggle_key);
+        MusicToggle.Value = Extensions.GetBool(musicToggle_key);
         MusicToggle.OnSettingChanged += (value) => {
-            SetBool(musicToggle_key, value);
+            Extensions.SetBool(musicToggle_key, value);
             PlayerPrefs.Save();
         };
-    }
-
-    private static bool GetBool(string key)
-    {
-        return PlayerPrefs.GetInt(key) == 1;
-    }
-
-    private static void SetBool(string key, bool value)
-    {
-        PlayerPrefs.SetInt(key, value ? 1 : 0);
     }
 }

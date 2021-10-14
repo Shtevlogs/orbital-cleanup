@@ -27,7 +27,11 @@ public class RoundEndUI : MonoBehaviour
     public AudioClip FailClip;
     public AudioReference SuccessFailSound;
 
+    public Button nextLevelButton;
+
     private bool success;
+
+    private LevelLocation nextLevelLocation;
 
     private void Start()
     {
@@ -47,6 +51,11 @@ public class RoundEndUI : MonoBehaviour
         TimeText.text = "" + time;
         ScrapLostText.text = "" + scrapLost;
 
+        nextLevelLocation.Category = LevelLoader.CurrentLevelLocation.Category;
+        nextLevelLocation.Index = LevelLoader.CurrentLevelLocation.Index + 1;
+
+        nextLevelButton.interactable = success && LevelUnlocks.GetUnlockStatus(nextLevelLocation);
+
         Content.gameObject.SetActive(true);
     }
 
@@ -63,8 +72,8 @@ public class RoundEndUI : MonoBehaviour
 
     public void OnNext()
     {
-        if (!success) return;
+        if (!success || !nextLevelButton.interactable) return;
 
-        //GameStateManager.NextLevel();
+        GameSceneLoader.Instance.LoadLevelScene(nextLevelLocation);
     }
 }

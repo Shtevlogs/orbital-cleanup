@@ -12,20 +12,6 @@ public class LevelSelectUI : MonoBehaviour
     public Transform LevelListContent;
     public TextMeshProUGUI PlanetTitle;
 
-    [SerializeField]
-    private List<LevelDefinition> earthLevels = new List<LevelDefinition>();
-    [SerializeField]
-    private List<LevelDefinition> marsLevels = new List<LevelDefinition>();
-    [SerializeField]
-    private List<LevelDefinition> gloopLevels = new List<LevelDefinition>();
-
-    public enum LevelCategory
-    {
-        Earth,
-        Mars,
-        Gloop
-    }
-
     public void Open(LevelCategory category)
     {
         for(var i = 0; i < LevelListContent.childCount; i++)
@@ -35,19 +21,28 @@ public class LevelSelectUI : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        var levelList = category == LevelCategory.Earth ? earthLevels : (category == LevelCategory.Mars ? marsLevels : gloopLevels);
+        var levelList = LevelUnlocks.GetLevelList(category);
 
-        foreach(var levelDef in levelList)
+        for(var i = 0; i < levelList.Count; i++)
         {
+            var levelDef = levelList[i];
             var newListItem = Instantiate(ListItemPrefab, LevelListContent);
-            newListItem.Title = levelDef.Name;
-            newListItem.Score = "None";
-            newListItem.Time = "None";
+            var levelLocation = new LevelLocation { Category = category, Index = i };
+            var levelData = SaveData.Load(levelLocation);
+
+            //a little failsafe so the initial levels are always unlocked
+            var unlocked = LevelUnlocks.GetUnlockStatus(levelLocation) || (i == 0 && category == LevelCategory.Earth);
+
+            newListItem.Title = unlocked ? levelDef.Name : "?";
+            newListItem.Score = levelData.HighScore == -1 ? "None" : levelData.HighScore.ToString();
+            newListItem.Time = levelData.BestTime == -1 ? "None" : levelData.BestTime.ToString();
+            newListItem.Completed = levelData.Completed;
 
             var newListItemButton = newListItem.GetComponent<Button>();
             newListItemButton.onClick.AddListener(()=> {
-                GameSceneLoader.Instance.LoadLevelScene(levelDef);
+                GameSceneLoader.Instance.LoadLevelScene(levelLocation);
             });
+            newListItemButton.interactable = unlocked;
         }
 
         LevelListContent.gameObject.SetActive(true);
