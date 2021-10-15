@@ -21,6 +21,15 @@ MonoBehaviour:
   - Position: {x: 4.207, y: -0.097}
     Velocity: {x: 0, y: 2}
     Rotation: 0
+  - Position: {x: -4.26, y: -0.46}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
+  - Position: {x: -4.76, y: 3.7}
+    Velocity: {x: 0, y: -2}
+    Rotation: 0
+  - Position: {x: 5.44, y: -2.22}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
   Bombs:
   - Position: {x: 6.11, y: 0.97}
     Velocity: {x: 0, y: -2}
@@ -31,3 +40,5 @@ MonoBehaviour:
     Rotation: -42
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: Orbital Training
+  Time: -1
+  MaxCameraRange: 9

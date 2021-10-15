@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -863494727366994368, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
+  m_Sprite: {fileID: -5728141544281728549, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -309,16 +309,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScrapImages:
-  - {fileID: -355382486172595394, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: 2472404345495907046, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: 4898008824136272398, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: -4457228135389671022, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: 3548587722453217740, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: 2735089262321303741, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: -8889937655565625972, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: -863494727366994368, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: -173211376069775432, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
-  - {fileID: -7297449250729974834, guid: 4774330ae33480f4382deab7490bab5c, type: 3}
+  - {fileID: -6406614739554889928, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -541989387653094777, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -8336975906911927498, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: 6083219540431806917, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -6035430983115782745, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -73144407860326997, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -336064523275371662, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -5728141544281728549, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: -6668752086253960480, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
+  - {fileID: 2146716237318601853, guid: c2c7a94e966257d47a70001239fe5de4, type: 3}
   MyRenderer: {fileID: 3334568591913010195}
 --- !u!1 &3334568593616588025
 GameObject:

@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: c2c7a94e966257d47a70001239fe5de4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6406614739554889928
+    second: pickups_outline_0
+  - first:
+      213: -541989387653094777
+    second: pickups_outline_1
+  - first:
+      213: -8336975906911927498
+    second: pickups_outline_2
+  - first:
+      213: 6287564085765938838
+    second: pickups_outline_3
+  - first:
+      213: -8744230119314474253
+    second: pickups_outline_4
+  - first:
+      213: 6083219540431806917
+    second: pickups_outline_5
+  - first:
+      213: -1517296000028029981
+    second: pickups_outline_6
+  - first:
+      213: -4523035230223833101
+    second: pickups_outline_7
+  - first:
+      213: -6035430983115782745
+    second: pickups_outline_8
+  - first:
+      213: -177213774576722591
+    second: pickups_outline_9
+  - first:
+      213: -73144407860326997
+    second: pickups_outline_10
+  - first:
+      213: -336064523275371662
+    second: pickups_outline_11
+  - first:
+      213: -431373409177150842
+    second: pickups_outline_12
+  - first:
+      213: -4522046490225082848
+    second: pickups_outline_13
+  - first:
+      213: -670374338014983887
+    second: pickups_outline_14
+  - first:
+      213: -1383757078893440510
+    second: pickups_outline_15
+  - first:
+      213: -5728141544281728549
+    second: pickups_outline_16
+  - first:
+      213: 4932614252234310591
+    second: pickups_outline_17
+  - first:
+      213: -1879174015234687744
+    second: pickups_outline_18
+  - first:
+      213: -8198593200588422142
+    second: pickups_outline_19
+  - first:
+      213: -6668752086253960480
+    second: pickups_outline_20
+  - first:
+      213: 2146716237318601853
+    second: pickups_outline_21
+  - first:
+      213: 7909653833390701800
+    second: pickups_outline_22
+  - first:
+      213: 7696696517980891632
+    second: pickups_outline_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +113,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +147,561 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pickups_outline_0
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1148
+        width: 277
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f8c0c86d12717a0800000000000000
+      internalID: -6406614739554889928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_1
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1146
+        width: 217
+        height: 340
+      alignment: 9
+      pivot: {x: 0.39563298, y: 0.52220315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782e7e406877a78f0800000000000000
+      internalID: -541989387653094777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_2
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1221
+        width: 254
+        height: 252
+      alignment: 9
+      pivot: {x: 0.49999976, y: 0.4325954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6334687759c1d4c80800000000000000
+      internalID: -8336975906911927498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_3
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 1172
+        width: 232
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e159a193ae14750800000000000000
+      internalID: 6287564085765938838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_4
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1120
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa3dff090146a680800000000000000
+      internalID: -8744230119314474253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_5
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 762
+        width: 383
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1272611ffeb6450800000000000000
+      internalID: 6083219540431806917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_6
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1107
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb4533b35b71fae0800000000000000
+      internalID: -1517296000028029981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_7
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1050
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f76ee31c63fa31c0800000000000000
+      internalID: -4523035230223833101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_8
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 723
+        width: 386
+        height: 293
+      alignment: 9
+      pivot: {x: 0.45599547, y: 0.44846904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a54ff87f77dd3ca0800000000000000
+      internalID: -6035430983115782745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_9
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 992
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d5c0dc2096a8df0800000000000000
+      internalID: -177213774576722591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 712
+        width: 288
+        height: 328
+      alignment: 9
+      pivot: {x: 0.53276527, y: 0.45396778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badcd207c832cfef0800000000000000
+      internalID: -73144407860326997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_11
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 727
+        width: 282
+        height: 264
+      alignment: 9
+      pivot: {x: 0.419689, y: 0.53574395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b7f8cb81f065bf0800000000000000
+      internalID: -336064523275371662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_12
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 716
+        width: 124
+        height: 145
+      alignment: 9
+      pivot: {x: 0.3782132, y: 0.38981217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a527c7b24730af0800000000000000
+      internalID: -431373409177150842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_13
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 630
+        width: 102
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ef45c0da67e31c0800000000000000
+      internalID: -4522046490225082848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_14
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 699
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1394414671a52b6f0800000000000000
+      internalID: -670374338014983887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_15
+      rect:
+        serializedVersion: 2
+        x: 2286
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202df19a448ebcce0800000000000000
+      internalID: -1383757078893440510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 247
+        width: 366
+        height: 270
+      alignment: 9
+      pivot: {x: 0.49484327, y: 0.56290936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd91eed4d9d8180b0800000000000000
+      internalID: -5728141544281728549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_17
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 513
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3847e378a247440800000000000000
+      internalID: 4932614252234310591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_18
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 350
+        width: 119
+        height: 230
+      alignment: 9
+      pivot: {x: 0.4950228, y: 0.48068437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dbace7035dbe5e0800000000000000
+      internalID: -1879174015234687744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_19
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 195
+        width: 314
+        height: 349
+      alignment: 9
+      pivot: {x: 0.43388376, y: 0.34858263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2048efc0ceeb83e80800000000000000
+      internalID: -8198593200588422142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_20
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 137
+        width: 314
+        height: 358
+      alignment: 9
+      pivot: {x: 0.4999996, y: 0.55798954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e200b36f45d373a0800000000000000
+      internalID: -6668752086253960480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_21
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 191
+        width: 168
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c30f64b0baacd10800000000000000
+      internalID: 2146716237318601853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_22
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 456
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec3f8b114cb4cd60800000000000000
+      internalID: 7909653833390701800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_outline_23
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 362
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9ac3a44b820da60800000000000000
+      internalID: 7696696517980891632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
