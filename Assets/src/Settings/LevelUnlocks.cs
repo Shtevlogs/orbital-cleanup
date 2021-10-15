@@ -37,6 +37,8 @@ public class LevelUnlocks : MonoBehaviour
 
     public static List<LevelDefinition> GetLevelList(LevelCategory category)
     {
+        if (Instance == null) return new List<LevelDefinition>();
+
         return category == LevelCategory.Earth ? Instance.EarthLevels : (category == LevelCategory.Mars ? Instance.MarsLevels : Instance.GloopLevels); ;
     }
 

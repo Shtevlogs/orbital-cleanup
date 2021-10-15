@@ -60,6 +60,8 @@ public class MusicController : MonoBehaviour
 
     public static void PlayTrack(AudioClip track, float fadeTime = 1f)
     {
+        if (Instance == null) return;
+
         var routine = Instance.AudioCrossfader.PlayTrack(track, fadeTime);
         if(routine != null)
             Instance.StartCoroutine(routine);

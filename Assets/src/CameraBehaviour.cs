@@ -26,6 +26,12 @@ public class CameraBehaviour : MonoBehaviour
     private void Start()
     {
         camera = GetComponent<Camera>();
+
+        var listeners = Transform.FindObjectsOfType<AudioListener>();
+        if(listeners.Length == 1)
+        {
+            GetComponent<AudioListener>().enabled = true;
+        }
     }
 
     public void OnRightStick(InputAction.CallbackContext value)

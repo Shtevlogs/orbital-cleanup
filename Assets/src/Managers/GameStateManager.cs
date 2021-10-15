@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -20,11 +22,20 @@ public class GameStateManager : MonoBehaviour
     private float roundStartTime;
     private bool roundEnded = false;
 
+    [SerializeField]
+    private Transform testingInputManager;
+
     private void Awake()
     {
         Instance = this;
         countdownTimer.OnTimerEnd += _onCountdownEnd;
         gameTimer.OnTimerEnd += _onRoundEnd;
+
+
+        if (Transform.FindObjectsOfType<EventSystem>().Length < 2)
+        {
+            testingInputManager.gameObject.SetActive(true);
+        }
     }
 
     private void Start()

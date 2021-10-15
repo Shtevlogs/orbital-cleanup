@@ -27,16 +27,22 @@ public class SaveData : MonoBehaviour
 
     public static void Save(LevelLocation location, LevelScoreData data)
     {
+        if (Instance == null) return;
+
         _saveData(location.ToString(), data);
     }
 
     public static LevelScoreData Load(LevelLocation location)
     {
+        if (Instance == null) return new LevelScoreData();
+
         return Instance.ResetSaveData ? new LevelScoreData() : _loadData(location.ToString());
     }
     
     public static void Persist()
     {
+        if (Instance == null) return;
+
         PlayerPrefs.Save();
     }
 
