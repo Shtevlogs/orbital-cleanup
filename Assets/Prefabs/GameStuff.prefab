@@ -404,7 +404,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &311964445623704471
 CanvasRenderer:
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4877755798518352412, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
+  m_Sprite: {fileID: -5876007111568823813, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -479,7 +479,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &311964445696666131
 CanvasRenderer:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4877755798518352412, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
+  m_Sprite: {fileID: -5876007111568823813, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -554,7 +554,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &311964445786201110
 CanvasRenderer:
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4877755798518352412, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
+  m_Sprite: {fileID: -5876007111568823813, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   Heart1: {fileID: 311964445786201105}
   Heart2: {fileID: 311964445696666130}
   Heart3: {fileID: 311964445623704470}
-  HealthyHeart: {fileID: -4877755798518352412, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
+  HealthyHeart: {fileID: -5876007111568823813, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
   HurtHeart: {fileID: -6057178544787812155, guid: 4887e364abf5ccc4fa38ab2476ea0885, type: 3}
 --- !u!1 &311964446627378614
 GameObject:
@@ -1588,7 +1588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 20}
+  m_AnchoredPosition: {x: -50, y: 50}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &311964446873069305
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 20
+  m_MovementRange: 30
   m_ControlPath: <Gamepad>/rightStick
 --- !u!1 &311964446917526021
 GameObject:

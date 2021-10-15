@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class OrbitalRenderer : MonoBehaviour
 {
@@ -25,7 +26,20 @@ public class OrbitalRenderer : MonoBehaviour
             return;
         }
 
-        var points = orbit.GetLineSegments(LineSegments);
+        var points = orbit.GetLineSegments(LineSegments, transform.position);
+
+        if(orbit.semimajoraxis < 0 && points.Length >= 4)
+        {
+            for(int i = points.Length / 4; i < points.Length; i++)
+            {
+                points[i] = points[(points.Length/4) - 1];
+            }
+            lineRenderer.loop = false;
+        }
+        else
+        {
+            lineRenderer.loop = true;
+        }
 
         lineRenderer.positionCount = points.Length;
 

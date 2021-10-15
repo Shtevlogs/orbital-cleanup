@@ -808,7 +808,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
@@ -825,6 +825,15 @@ LineRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4988864
+        value: 0.009803921
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1301,6 +1310,7 @@ MonoBehaviour:
   StartingRotation: 0
   LineSegments: 60
   OrbitalReference: {fileID: 0}
+  verbose: 0
 --- !u!1 &7806915433388980873
 GameObject:
   m_ObjectHideFlags: 0

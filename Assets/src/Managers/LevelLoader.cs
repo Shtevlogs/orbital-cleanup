@@ -124,18 +124,9 @@ public class LevelLoader : MonoBehaviour
             _destroy(player.gameObject);
         }
 
-        foreach (Transform scrap in ScrapHolder)
-        {
-            _destroy(scrap.gameObject);
-        }
-        foreach (Transform bomb in BombHolder)
-        {
-            _destroy(bomb.gameObject);
-        }
-        foreach (Transform fuel in FuelHolder)
-        {
-            _destroy(fuel.gameObject);
-        }
+        _destroyChildren(ScrapHolder);
+        _destroyChildren(BombHolder);
+        _destroyChildren(FuelHolder);
 
         Scrap.ScrapInLevel = 0;
 
@@ -210,6 +201,24 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    private void _destroyChildren(Transform parent)
+    {
+        if (!Application.isPlaying)
+        {
+            while(parent.childCount > 0)
+            {
+                DestroyImmediate(parent.GetChild(0).gameObject);
+            }
+        }
+        else
+        {
+            foreach(Transform child in parent)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+    }
+
     private void _destroy(GameObject go)
     {
         if (!Application.isPlaying)
@@ -218,7 +227,7 @@ public class LevelLoader : MonoBehaviour
         }
         else
         {
-            Destroy(go);
+            GameObject.Destroy(go);
         }
     }
 }

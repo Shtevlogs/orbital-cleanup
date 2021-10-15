@@ -15,17 +15,20 @@ public class Orbit
     public float orbitalangle;
     [NonSerialized]
     public float timeofperihelion;
+    [NonSerialized]
+    public bool clockwise;
 
     public Orbit() {}
 
-    public Orbit(Vector2 centerPosition, float semimajoraxis, float eccentricity, float orbitalangle, float timeofperihelion)
+    public Orbit(Vector2 centerPosition, float semimajoraxis, float eccentricity, float orbitalangle, float timeofperihelion, bool clockwise)
     {
         this.semimajoraxis = semimajoraxis;
         this.eccentricity = eccentricity;
         this.orbitalangle = orbitalangle;
         this.timeofperihelion = timeofperihelion;
+        this.clockwise = clockwise;
 
-        if(float.IsNaN(semimajoraxis) || float.IsNaN(eccentricity) || float.IsNaN(orbitalangle))
+        if (float.IsNaN(semimajoraxis) || float.IsNaN(eccentricity) || float.IsNaN(orbitalangle))
         {
             Debug.Log("nananana");
         }
@@ -140,7 +143,7 @@ public class Orbit
         }
         else
         {
-            return new Orbit(planetPosition, semimajoraxis, eccentricity, orbitalAngle, T);
+            return new Orbit(planetPosition, semimajoraxis, eccentricity, orbitalAngle, T, angularMomentum <= 0);
         }
     }
 
@@ -153,20 +156,24 @@ public class Orbit
         return radius * unitDirection;
     }
 
-    public Vector3[] GetLineSegments(int lineSegments)
+    public Vector3[] GetLineSegments(int lineSegments, Vector2 position)
     {
         var points = new Vector3[lineSegments];
 
+        var startingAngle = Vector2.SignedAngle(Vector2.right, position - CenterPosition);
+
+        var direction = clockwise ? 1f : -1f;
+
         for (var i = 0; i < lineSegments; i++)
         {
-            var toAdd = CenterPosition + GetPositionAtAngle(i * 360f / (float)lineSegments);
+            var toAdd = CenterPosition + GetPositionAtAngle(startingAngle + direction * i * 360f / (float)lineSegments);
             if (float.IsNaN(toAdd.magnitude))
             {
                 points[i] = Vector3.zero;
             }
             else
             {
-                points[i] = CenterPosition + GetPositionAtAngle(i * 360f / (float)lineSegments);
+                points[i] = toAdd;
             }
         }
 

@@ -18,6 +18,8 @@ public class OrbitHandler : MonoBehaviour
 
     private Orbit orbit;
 
+    public bool verbose;
+
     private void Start()
     {
         ResetVelocity();
@@ -45,7 +47,7 @@ public class OrbitHandler : MonoBehaviour
 
         if (orbit == null) return;
 
-        var points = orbit.GetLineSegments(LineSegments);
+        var points = orbit.GetLineSegments(LineSegments, transform.position);
 
         var lastPoint = Vector3.zero;
         var hasLastPoint = false;
@@ -73,6 +75,12 @@ public class OrbitHandler : MonoBehaviour
         rigidbody.velocity += gforce * Time.fixedDeltaTime;
 
         orbit = GravitySystem.GetMyOrbit(transform.transform, rigidbody.velocity, OrbitalReference);
+
+        if (verbose)
+        {
+            Debug.Log("Current Orbit: ");
+            Debug.Log(orbit.eccentricity + ", " + orbit.orbitalangle + ", " + orbit.timeofperihelion + ", " + orbit.semimajoraxis + ", " + (orbit.clockwise ? "Clockwise" : "CCW"));
+        }
 
         orbitalRenderer?.RenderOrbit(orbit);
     }

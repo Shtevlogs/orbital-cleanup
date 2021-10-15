@@ -404,3 +404,4 @@ MonoBehaviour:
   StartingRotation: 0
   LineSegments: 60
   OrbitalReference: {fileID: 0}
+  verbose: 0

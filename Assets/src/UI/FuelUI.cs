@@ -24,6 +24,11 @@ public class FuelUI : MonoBehaviour
             (fuelColorPercent * FuelFullColor + (1f - fuelColorPercent) * FuelHalfColor) : 
             (fuelColorPercent * FuelHalfColor + (1f - fuelColorPercent) * FuelEmptyColor);
 
+        if(fuelLevel >= 1f)
+        {
+            fuelColor = FuelFullColor;
+        }
+
         FuelLevelDisplay.anchoredPosition = new Vector2(FuelLevelDisplay.anchoredPosition.x, fuelYCoord);
         FuelImage.color = fuelColor;
     }
