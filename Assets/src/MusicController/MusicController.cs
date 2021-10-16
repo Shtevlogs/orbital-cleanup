@@ -69,11 +69,13 @@ public class MusicController : MonoBehaviour
 
     public static void LowerVolume()
     {
+        if (Instance == null) return;
         Instance.TargetVolume = 0.5f;
     }
 
     public static void RaiseVolume()
     {
+        if (Instance == null) return;
         Instance.TargetVolume = 1f;
     }
 }

@@ -8,7 +8,8 @@ public class GameStateManager : MonoBehaviour
 {
     private static GameStateManager Instance;
 
-    public static bool IsPaused = true;
+    public static bool IsPaused = false;
+    public static bool RoundStarting = true;
 
     [SerializeField]
     private LevelLoader levelLoader;
@@ -77,6 +78,9 @@ public class GameStateManager : MonoBehaviour
 
     public static void Pause()
     {
+        if (RoundStarting)
+            Instance.countdownTimer.StopTimer();
+
         IsPaused = true;
         //pause physics
         Time.timeScale = 0f;
@@ -84,6 +88,9 @@ public class GameStateManager : MonoBehaviour
 
     public static void UnPause()
     {
+        if (RoundStarting)
+            Instance.countdownTimer.ResumeTimer();
+
         IsPaused = false;
         //pause physics
         Time.timeScale = 1f;
@@ -136,14 +143,14 @@ public class GameStateManager : MonoBehaviour
     {
         if (active)
         {
-            Pause();
+            Time.timeScale = 0f;
             //position introduction camera
         }
         else
         {
-            UnPause();
             Time.timeScale = 1f;
             //release intro camera
         }
+        RoundStarting = active;
     }
 }

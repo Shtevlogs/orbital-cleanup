@@ -42,6 +42,11 @@ public class Timer : MonoBehaviour
         timerStarted = false;
     }
 
+    public void ResumeTimer()
+    {
+        timerStarted = true;
+    }
+
     public void ResetTimer()
     {
         timerStarted = false;
