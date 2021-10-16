@@ -112,12 +112,12 @@ TextureImporter:
       name: planetParts_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 908
-        width: 861
-        height: 864
+        x: 21
+        y: 898
+        width: 879
+        height: 883
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
         width: 840
         height: 836
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

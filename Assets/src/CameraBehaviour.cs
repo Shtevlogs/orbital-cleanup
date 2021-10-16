@@ -21,12 +21,14 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField]
     private float minZoom = 4f;
 
+    [SerializeField]
     private new Camera camera;
+
+    [SerializeField]
+    private PositionIndicatorUI positionIndicator;
 
     private void Start()
     {
-        camera = GetComponent<Camera>();
-
         var listeners = Transform.FindObjectsOfType<AudioListener>();
         if(listeners.Length == 1)
         {
@@ -39,6 +41,7 @@ public class CameraBehaviour : MonoBehaviour
         leadTargetLocation = value.ReadValue<Vector2>() * lead;
     }
 
+    private Rect cameraBounds = new Rect();
     private void Update()
     {
         var target = PlayerController.Instance.transform;
@@ -51,5 +54,37 @@ public class CameraBehaviour : MonoBehaviour
             transform.position.z);
 
         camera.orthographicSize = Mathf.Clamp(((Vector2)transform.position - center).magnitude, minZoom, 100f);
+
+        cameraBounds = BuildRect(transform.position, new Vector2(camera.orthographicSize * 2 * camera.aspect, camera.orthographicSize * 2));
+
+        if (cameraBounds.Contains((Vector2)target.position - cameraBounds.position, true))
+        {
+            positionIndicator.gameObject.SetActive(false);
+        }
+        else
+        {
+            positionIndicator.gameObject.SetActive(true);
+            positionIndicator.Angle = Vector2.SignedAngle(Vector2.right, target.position - transform.position);
+        }
+    }
+
+    private Rect BuildRect(Vector2 position, Vector2 bounds)
+    {
+        return new Rect((position - (bounds / 2f))/2f, bounds);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+
+        var bottomLeft = cameraBounds.min + cameraBounds.position;
+        var bottomRight = new Vector2(cameraBounds.max.x, cameraBounds.min.y) + cameraBounds.position;
+        var topRight = cameraBounds.max + cameraBounds.position;
+        var topLeft = new Vector2(cameraBounds.min.x, cameraBounds.max.y) + cameraBounds.position;
+
+        Gizmos.DrawLine(topLeft, topRight);
+        Gizmos.DrawLine(topRight, bottomRight);
+        Gizmos.DrawLine(bottomRight, bottomLeft);
+        Gizmos.DrawLine(bottomLeft, topLeft);
     }
 }
