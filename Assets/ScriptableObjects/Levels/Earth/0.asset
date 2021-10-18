@@ -12,33 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  LevelScene: 5
+  LevelScene: 4
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -0.06, y: -3.44}
+    Velocity: {x: 2.5, y: 0}
     Rotation: 0
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
-    Rotation: 0
-  - Position: {x: -4.26, y: -0.46}
-    Velocity: {x: 0, y: 2}
-    Rotation: 0
-  - Position: {x: -4.76, y: 3.7}
-    Velocity: {x: 0, y: -2}
-    Rotation: 0
-  - Position: {x: 5.44, y: -2.22}
-    Velocity: {x: 0, y: 2}
-    Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
+  - Position: {x: 4.89, y: -0.08}
+    Velocity: {x: 0, y: 2.1}
+    Rotation: -20
+  Bombs: []
+  Fuels: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
-  Name: Orbital Training
+  Name: 'Rocketry 101: Thrust'
   Time: -1
+  StartingFuel: 1
+  StartingHealth: 1
   MaxCameraRange: 9

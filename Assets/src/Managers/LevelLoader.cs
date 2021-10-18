@@ -85,7 +85,7 @@ public class LevelLoader : MonoBehaviour
         foreach (Transform fuelObject in FuelHolder)
         {
             var orbit = fuelObject.GetComponent<OrbitHandler>();
-            spawnedFuelList.Add(new PositionVelocity { Position = fuelObject.position, Velocity = orbit.StartingVelocity, Rotation = orbit.StartingRotation });
+            spawnedFuelList.Add(new PositionVelocity { Position = fuelObject.position, Velocity = orbit.StartingVelocity, Rotation = orbit.StartingRotation, FuelLevel = fuelObject.GetComponent<Fuel>().Value });
         }
         WorkingLevel.Fuels = spawnedFuelList;
 
@@ -98,7 +98,11 @@ public class LevelLoader : MonoBehaviour
         }
 
         var playerOrbitHandler = player.gameObject.GetComponent<OrbitHandler>();
-        WorkingLevel.PlayerStart = new PositionVelocity { Position = playerOrbitHandler.transform.position, Velocity = playerOrbitHandler.StartingVelocity };
+        WorkingLevel.PlayerStart = new PositionVelocity { 
+            Position = playerOrbitHandler.transform.position, 
+            Velocity = playerOrbitHandler.StartingVelocity,
+            Rotation = player.transform.rotation.eulerAngles.z
+        };
 
         WorkingLevel.LevelScene = (GameSceneLoader.GameScene)SceneManager.GetActiveScene().buildIndex;
 
@@ -156,10 +160,13 @@ public class LevelLoader : MonoBehaviour
         var player = Instantiate(PlayerPrefab, transform.parent);
 
         player.transform.position = WorkingLevel.PlayerStart.Position;
+        player.transform.rotation = Quaternion.Euler(0,0,WorkingLevel.PlayerStart.Rotation);
 
         var playerOrbitHandler = player.GetComponent<OrbitHandler>();
         playerOrbitHandler.StartingVelocity = WorkingLevel.PlayerStart.Velocity;
         playerOrbitHandler.ResetVelocity();
+
+        player.FuelLevel = Mathf.Clamp01(WorkingLevel.StartingFuel);
 
         foreach(var scrapPlacement in WorkingLevel.Scraps)
         {
@@ -189,6 +196,7 @@ public class LevelLoader : MonoBehaviour
             newFuelOrbit.StartingVelocity = fuelPlacement.Velocity;
             newFuelOrbit.StartingRotation = fuelPlacement.Rotation;
             newFuelOrbit.ResetVelocity();
+            newFuel.Value = fuelPlacement.FuelLevel;
         }
 
         if(Application.isPlaying)

@@ -28,6 +28,10 @@ public class FuelUI : MonoBehaviour
         {
             fuelColor = FuelFullColor;
         }
+        if(fuelLevel == 0f)
+        {
+            fuelColor = Color.clear;
+        }
 
         FuelLevelDisplay.anchoredPosition = new Vector2(FuelLevelDisplay.anchoredPosition.x, fuelYCoord);
         FuelImage.color = fuelColor;

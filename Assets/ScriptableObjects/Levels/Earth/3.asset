@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  LevelScene: 5
+  LevelScene: 4
   PlayerStart:
     Position: {x: 0, y: -3.15}
     Velocity: {x: -2.5, y: 0}
     Rotation: 0
   Scraps:
   - Position: {x: 4.207, y: -0.097}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
+  - Position: {x: -5.95, y: 1.14}
     Velocity: {x: 0, y: 2}
     Rotation: 0
   Bombs:
@@ -30,4 +33,8 @@ MonoBehaviour:
     Velocity: {x: 0, y: 2}
     Rotation: -42
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
-  Name: Orbital Training
+  Name: Final Exam
+  Time: -1
+  StartingFuel: 0.25
+  StartingHealth: 1
+  MaxCameraRange: 9

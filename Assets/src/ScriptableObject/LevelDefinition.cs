@@ -20,6 +20,9 @@ public class LevelDefinition : ScriptableObject
 
     public string Name;
     public int Time = -1;
+    [Range(0f, 1f)]
+    public float StartingFuel = 1f;
+    public int StartingHealth = 3;
 
     public float MaxCameraRange = 9f;
 }
