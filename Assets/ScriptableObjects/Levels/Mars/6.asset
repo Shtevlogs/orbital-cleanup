@@ -14,24 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 7
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -10.11, y: -0.02}
+    Velocity: {x: 0, y: -0.65}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
+  - Position: {x: -2.58, y: -0.097}
     Velocity: {x: 0, y: 2}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
+    FuelLevel: 0.5
+  - Position: {x: 7.33, y: 7.18}
+    Velocity: {x: -0.7, y: 0.7}
+    Rotation: 0
+    FuelLevel: 0.5
+  Bombs: []
+  Fuels: []
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
   Name: Mars Right
-  Time: -1
-  StartingFuel: 1
+  Time: 30
+  StartingFuel: 0.75
   StartingHealth: 1
   MaxCameraRange: 9

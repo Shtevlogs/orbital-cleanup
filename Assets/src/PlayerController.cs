@@ -68,6 +68,12 @@ public class PlayerController : MonoBehaviour
     {
         currentMove = value.ReadValue<Vector2>();
 
+        //deadzone
+        if(currentMove.magnitude < 0.25f)
+        {
+            currentMove = Vector2.zero;
+        }
+
         fireTransform.localScale = new Vector3(1f, FuelLevel > 0f ? currentMove.magnitude: 0f, 1f);
         modelTransform.localScale = basicmodeltransform - new Vector3(0f, basicmodeltransform.y, 0f) * Mathf.Clamp(FuelLevel > 0f ? currentMove.magnitude : 0f, 0f, 0.1f);
     }

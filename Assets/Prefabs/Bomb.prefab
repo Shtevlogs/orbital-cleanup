@@ -450,6 +450,9 @@ MonoBehaviour:
   pickupmask:
     serializedVersion: 2
     m_Bits: 512
+  explosionPrefab: {fileID: 656084310225116525, guid: dc969ef231e4b3d4aaff3ac160771be1, type: 3}
+  explosionRadius: 1
+  explosionForce: 2.5
 --- !u!58 &1782560279731941378
 CircleCollider2D:
   m_ObjectHideFlags: 0
