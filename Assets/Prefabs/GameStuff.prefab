@@ -1551,6 +1551,7 @@ Transform:
   - {fileID: 311964445546163344}
   - {fileID: 311964446309590418}
   - {fileID: 311964444903740673}
+  - {fileID: 3980134939016500888}
   - {fileID: 6771705485998324344}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1696,10 +1697,42 @@ MonoBehaviour:
   ScrapHolder: {fileID: 311964445546163344}
   BombHolder: {fileID: 311964446309590418}
   FuelHolder: {fileID: 311964444903740673}
+  AlienHolder: {fileID: 3980134939016500888}
   PlayerPrefab: {fileID: 7806915433359809504, guid: 1df54a76fb7dac64ba7b12801be82039, type: 3}
   ScrapPrefab: {fileID: 3334568592391297254, guid: 2a3cdea7740d6b34aa157efe65d74d65, type: 3}
   BombPrefab: {fileID: 1782560279731941382, guid: 0f9259ef59569b24d8c99b3b2ea763d1, type: 3}
   FuelPrefab: {fileID: 5583464119470123713, guid: aef5ae0d87c0dc24598f95e28e7243bd, type: 3}
+  AlienPrefab: {fileID: -6944374570250347374, guid: d9978fbd4424d3048b46c4641eeeb8b9, type: 3}
+--- !u!1 &552737248981581098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3980134939016500888}
+  m_Layer: 0
+  m_Name: AlienHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3980134939016500888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552737248981581098}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311964446627378615}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070649506598852429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,7 +1827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 311964446627378615}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5575804234498995048
 MonoBehaviour:

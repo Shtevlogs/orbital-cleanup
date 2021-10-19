@@ -15,6 +15,7 @@ public class LevelDefinition : ScriptableObject
     public List<PositionVelocity> Scraps;
     public List<PositionVelocity> Bombs;
     public List<PositionVelocity> Fuels;
+    public List<PositionVelocity> Aliens;
 
     public AudioClip Music;
 

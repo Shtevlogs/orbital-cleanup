@@ -26,17 +26,15 @@ public class Bomb : MonoBehaviour
         {
             //player hit by bomb logic
             PlayerController.Instance.Damage();
-
-            explode();
         }
         else if((pickupmask >> go.layer) == 1)
         {
             //pickup hit by bomb logic
             var pickup = go.GetComponent<Pickup>();
             pickup.Destroy();
-
-            explode();
         }
+
+        explode();
     }
 
     private void explode()

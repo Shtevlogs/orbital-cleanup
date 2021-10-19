@@ -33,9 +33,14 @@ MonoBehaviour:
     Velocity: {x: 0, y: 2}
     Rotation: -42
     FuelLevel: 0.5
+  Aliens:
+  - Position: {x: 10.43, y: 0.03}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
+    FuelLevel: 0.5
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
   Name: GloopHo!
   Time: -1
   StartingFuel: 1
-  StartingHealth: 1
+  StartingHealth: 3
   MaxCameraRange: 9

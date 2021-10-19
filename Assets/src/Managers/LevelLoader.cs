@@ -19,11 +19,13 @@ public class LevelLoader : MonoBehaviour
     public Transform ScrapHolder;
     public Transform BombHolder;
     public Transform FuelHolder;
+    public Transform AlienHolder;
 
     public PlayerController PlayerPrefab;
     public Scrap ScrapPrefab;
     public Bomb BombPrefab;
     public Fuel FuelPrefab;
+    public Alien AlienPrefab;
 
     private void Update()
     {
@@ -89,6 +91,14 @@ public class LevelLoader : MonoBehaviour
         }
         WorkingLevel.Fuels = spawnedFuelList;
 
+        var spawnedAlienList = new List<PositionVelocity>();
+        foreach(Transform alienObject in AlienHolder)
+        {
+            var orbit = alienObject.GetComponent<OrbitHandler>();
+            spawnedAlienList.Add(new PositionVelocity { Position = alienObject.position, Velocity = orbit.StartingVelocity, Rotation = orbit.StartingRotation });
+        }
+        WorkingLevel.Aliens = spawnedAlienList;
+
         var player = Transform.FindObjectOfType<PlayerController>();
 
         if(player == null)
@@ -131,6 +141,7 @@ public class LevelLoader : MonoBehaviour
         _destroyChildren(ScrapHolder);
         _destroyChildren(BombHolder);
         _destroyChildren(FuelHolder);
+        _destroyChildren(AlienHolder);
 
         Scrap.ScrapInLevel = 0;
 
@@ -199,6 +210,16 @@ public class LevelLoader : MonoBehaviour
             newFuelOrbit.StartingRotation = fuelPlacement.Rotation;
             newFuelOrbit.ResetVelocity();
             newFuel.Value = fuelPlacement.FuelLevel;
+        }
+
+        foreach(var alienPlacement in WorkingLevel.Aliens)
+        {
+            var newAlien = Instantiate(AlienPrefab, AlienHolder);
+            var newAlienOrbit = newAlien.GetComponent<OrbitHandler>();
+            newAlien.transform.position = alienPlacement.Position;
+            newAlienOrbit.StartingVelocity = alienPlacement.Velocity;
+            newAlienOrbit.StartingRotation = alienPlacement.Rotation;
+            newAlienOrbit.ResetVelocity();
         }
 
         if(Application.isPlaying)

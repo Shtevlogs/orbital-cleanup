@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         Instance = this;
     }
 
+    [NonSerialized]
     private Vector2 currentMove;
     private Vector2 currentFacingDir = Vector2.up;
 
@@ -55,6 +56,8 @@ public class PlayerController : MonoBehaviour
     private AudioClip fuelPickupClip;
     [SerializeField]
     private AudioClip scrapPickupClip;
+
+    private bool captured;
 
     private void Start()
     {
@@ -104,6 +107,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Captured(bool captured)
+    {
+        this.captured = captured;
+
+        if (captured)
+        {
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        else
+        {
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
+    public bool HasZeroMovement()
+    {
+        return currentMove == Vector2.zero;
+    }
+
     private void Update()
     {
         if(currentMove != Vector2.zero)
@@ -123,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(FuelLevel > 0f)
+        if(FuelLevel > 0f && !captured)
         {
             var fuelDrain = currentMove.magnitude * fuelDrainRate * Time.fixedDeltaTime;
 
