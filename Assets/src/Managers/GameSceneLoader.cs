@@ -19,7 +19,8 @@ public class GameSceneLoader : MonoBehaviour
 
         Mars = 7,
 
-        Gloop = 8
+        Gloop = 8,
+        GloopParty = 9
     }
 
     public static GameSceneLoader Instance;

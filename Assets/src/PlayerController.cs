@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 basicmodeltransform;
 
     public float FuelLevel = 1f;
+    public int MaxHealth = 3;
+    [NonSerialized]
     public int Health = 3;
     [NonSerialized]
     public int ScrapCollectedCount = 0;

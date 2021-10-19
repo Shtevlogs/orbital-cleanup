@@ -12,23 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  LevelScene: 8
+  LevelScene: 9
   PlayerStart:
-    Position: {x: 0, y: -3.15}
+    Position: {x: 0, y: -4.73}
     Velocity: {x: -2.5, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 4.207, y: -0.097}
     Velocity: {x: 0, y: 2}
     Rotation: 0
+    FuelLevel: 0.5
   Bombs:
   - Position: {x: 6.11, y: 0.97}
     Velocity: {x: 0, y: -2}
     Rotation: 170
+    FuelLevel: 0.5
   Fuels:
   - Position: {x: -4.96, y: 0.07}
     Velocity: {x: 0, y: 2}
     Rotation: -42
+    FuelLevel: 0.5
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
   Name: GloopHo!
   Time: -1

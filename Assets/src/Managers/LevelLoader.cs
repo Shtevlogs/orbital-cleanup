@@ -167,8 +167,10 @@ public class LevelLoader : MonoBehaviour
         playerOrbitHandler.ResetVelocity();
 
         player.FuelLevel = Mathf.Clamp01(WorkingLevel.StartingFuel);
+        player.Health = WorkingLevel.StartingHealth;
+        player.MaxHealth = WorkingLevel.StartingHealth;
 
-        foreach(var scrapPlacement in WorkingLevel.Scraps)
+        foreach (var scrapPlacement in WorkingLevel.Scraps)
         {
             var newScrap = Instantiate(ScrapPrefab, ScrapHolder);
             var newScrapOrbit = newScrap.GetComponent<OrbitHandler>();

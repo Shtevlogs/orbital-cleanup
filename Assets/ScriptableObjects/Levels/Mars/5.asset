@@ -30,7 +30,7 @@ MonoBehaviour:
   Bombs: []
   Fuels: []
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: Mars Right
+  Name: Rapid Adjustments
   Time: 28
   StartingFuel: 1
   StartingHealth: 1

@@ -14,24 +14,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 7
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -5.56, y: 0.03}
+    Velocity: {x: 0, y: 1.35}
     Rotation: 0
     FuelLevel: 0.5
   Scraps:
-  - Position: {x: 11.21, y: 0.06}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -15.25, y: 0.06}
+    Velocity: {x: 0, y: 0.815}
     Rotation: 0
     FuelLevel: 0.5
   Bombs:
-  - Position: {x: -3.48, y: 0.44}
-    Velocity: {x: 0, y: -2}
+  - Position: {x: -4.5, y: 0.1}
+    Velocity: {x: 0, y: -1.5}
     Rotation: 170
     FuelLevel: 0.5
-  Fuels: []
+  Fuels:
+  - Position: {x: 0.08, y: 12.45}
+    Velocity: {x: 0.9, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -11.07, y: 5.77}
+    Velocity: {x: 0.4, y: 0.8}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -5.74, y: -11.14}
+    Velocity: {x: -0.8, y: 0.4}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -12.45, y: -0.03}
+    Velocity: {x: 0, y: 0.9}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -8.74, y: 8.88}
+    Velocity: {x: 0.635, y: 0.635}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -5.61, y: 11.21}
+    Velocity: {x: 0.8, y: 0.4}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -11.23, y: -5.36}
+    Velocity: {x: -0.4, y: 0.8}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -8.79, y: -8.84}
+    Velocity: {x: -0.635, y: 0.635}
+    Rotation: 0
+    FuelLevel: 0.5
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: Mars Right
+  Name: Blastback
   Time: -1
-  StartingFuel: 1
-  StartingHealth: 1
+  StartingFuel: 0.006
+  StartingHealth: 2
   MaxCameraRange: 9

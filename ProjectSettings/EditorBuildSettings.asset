@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Planets/Mars.unity
     guid: c629f59bc2fe1c04a8a08023e520a5ac
+  - enabled: 1
+    path: Assets/Scenes/Planets/Gloop.unity
+    guid: 368505092d96b8b468ceba25779a4eac
+  - enabled: 1
+    path: Assets/Scenes/Planets/GloopParty.unity
+    guid: 9280c4b12e81dae4395ed14496ee446e
   m_configObjects: {}
