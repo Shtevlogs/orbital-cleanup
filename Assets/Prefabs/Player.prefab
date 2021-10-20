@@ -1281,10 +1281,10 @@ MonoBehaviour:
   modelTransform: {fileID: 7806915433876232017}
   fireTransform: {fileID: 7806915433878522188}
   FuelLevel: 1
-  Health: 3
+  MaxHealth: 3
   thrusterAudio:
     AudioSource: {fileID: 394517508146674981}
-    MaxVolume: 0.1
+    MaxVolume: 0.05
   pickupAudio:
     AudioSource: {fileID: 2335076692439721636}
     MaxVolume: 0.15

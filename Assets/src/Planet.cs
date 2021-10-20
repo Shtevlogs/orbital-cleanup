@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -9,7 +11,10 @@ public class Planet : MonoBehaviour
     public float Mass;
     public float SurfaceRadius;
     public float AtmosphereRadius;
+
+#if UNITY_EDITOR
     public AnimatorController PlanetAnimator;
+#endif
 
     public Color PlanetCloudColor = Color.white;
 
@@ -30,7 +35,9 @@ public class Planet : MonoBehaviour
 
         cloudRenderer.color = PlanetCloudColor;
 
+#if UNITY_EDITOR
         animator.runtimeAnimatorController = PlanetAnimator;
+#endif
     }
 
     private void OnDrawGizmosSelected()

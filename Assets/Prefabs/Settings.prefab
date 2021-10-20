@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a8cb4fc99570b418bf000b3cce52ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResetSaveData: 0
+  ResetSave: 0
 --- !u!114 &2253250167559230432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,9 +86,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a6836a9f078dd54fb1d664bb7c6da65, type: 2}
   - {fileID: 11400000, guid: f2ac0d7378b18ee4f98c4d0263c6c800, type: 2}
   - {fileID: 11400000, guid: fc25a53930867e840b882a8aad040a97, type: 2}
-  - {fileID: 11400000, guid: 4f5061c2591086744a6259d827011a66, type: 2}
+  - {fileID: 11400000, guid: 17dfa5cd9678b7e4ab03d324f5ac1fcc, type: 2}
   - {fileID: 11400000, guid: 5b5acd8ee8e5d5d48a2e674f88924f9f, type: 2}
-  - {fileID: 11400000, guid: 6bec03e9f9454f9419494e232366bd42, type: 2}
+  - {fileID: 11400000, guid: f8cd5ca402128054d86321c63ebb56a8, type: 2}
   - {fileID: 11400000, guid: 2398b30b3da210549929627bb0eb3c42, type: 2}
   - {fileID: 11400000, guid: fe3872fb970f5b340b03c6ced84bda38, type: 2}
   - {fileID: 11400000, guid: 357c0aaa101bf9d41af627f13386cc96, type: 2}

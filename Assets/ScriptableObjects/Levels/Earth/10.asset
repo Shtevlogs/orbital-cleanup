@@ -17,15 +17,18 @@ MonoBehaviour:
     Position: {x: 12.23, y: -7.24}
     Velocity: {x: 0.62, y: 1}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 29.573, y: -6.475}
     Velocity: {x: 0, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Bombs: []
   Fuels: []
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: Getting There
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
-  MaxCameraRange: 15
+  MaxCameraRange: 20

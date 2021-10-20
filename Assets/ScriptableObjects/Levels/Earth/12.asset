@@ -51,4 +51,4 @@ MonoBehaviour:
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
-  MaxCameraRange: 15
+  MaxCameraRange: 20

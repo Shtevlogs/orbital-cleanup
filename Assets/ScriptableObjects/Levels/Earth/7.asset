@@ -17,18 +17,22 @@ MonoBehaviour:
     Position: {x: -4.7, y: -4.09}
     Velocity: {x: 1.1, y: -1.4}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 12.17, y: 4.77}
     Velocity: {x: -0.6, y: 1.2}
     Rotation: 0
+    FuelLevel: 0.5
   Bombs: []
   Fuels:
   - Position: {x: -4.37, y: -1.95}
     Velocity: {x: -0.8, y: 1.83}
     Rotation: -42
+    FuelLevel: 0.5
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: Refuel Needed
   Time: -1
-  StartingFuel: 1
+  StartingFuel: 0.02
   StartingHealth: 1
   MaxCameraRange: 9

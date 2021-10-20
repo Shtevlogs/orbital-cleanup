@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -32,8 +33,7 @@ public class GameStateManager : MonoBehaviour
         countdownTimer.OnTimerEnd += _onCountdownEnd;
         gameTimer.OnTimerEnd += _onRoundEnd;
 
-
-        if (Transform.FindObjectsOfType<EventSystem>().Length < 2)
+        if (SceneManager.sceneCount == 1)
         {
             testingInputManager.gameObject.SetActive(true);
         }
@@ -79,7 +79,7 @@ public class GameStateManager : MonoBehaviour
 
     public static void Pause()
     {
-        if (RoundStarting)
+        if (RoundStarting && Instance != null && Instance.countdownTimer != null)
             Instance.countdownTimer.StopTimer();
 
         IsPaused = true;
@@ -89,7 +89,7 @@ public class GameStateManager : MonoBehaviour
 
     public static void UnPause()
     {
-        if (RoundStarting)
+        if (RoundStarting && Instance != null && Instance.countdownTimer != null)
             Instance.countdownTimer.ResumeTimer();
 
         IsPaused = false;
@@ -130,7 +130,6 @@ public class GameStateManager : MonoBehaviour
         var score = (int)Mathf.Clamp(1000f * timePercent + 100f * scrapsCollected - 200f * scrapsLost + 300f * playerHealthPercent, 0f, float.MaxValue);
 
         Instance.gameTimer.StopTimer();
-        RoundEndUI.Instance.Activate(success, message, score, (int)totalTime, scrapsLost);
 
         //save data
         var currentLevelData = SaveData.Load(LevelLoader.CurrentLevelLocation);
@@ -139,6 +138,9 @@ public class GameStateManager : MonoBehaviour
         currentLevelData.Completed = currentLevelData.Completed || success;
         SaveData.Save(LevelLoader.CurrentLevelLocation, currentLevelData);
         SaveData.Persist();
+
+        //gotta do this after saving, duh
+        RoundEndUI.Instance.Activate(success, message, score, (int)totalTime, scrapsLost);
     }
 
     private void _overviewMode(bool active)

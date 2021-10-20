@@ -29,13 +29,13 @@ public class Settings : MonoBehaviour
 
     private void _pullSettings()
     {
-        VolumeToggle.Value = Extensions.GetBool(volumeToggle_key);
+        VolumeToggle.Value = PlayerPrefs.HasKey(volumeToggle_key) ? Extensions.GetBool(volumeToggle_key) : true;
         VolumeToggle.OnSettingChanged += (value) => {
             Extensions.SetBool(volumeToggle_key, value);
             PlayerPrefs.Save();
         };
 
-        MusicToggle.Value = Extensions.GetBool(musicToggle_key);
+        MusicToggle.Value = PlayerPrefs.HasKey(musicToggle_key) ? Extensions.GetBool(musicToggle_key) : true;
         MusicToggle.OnSettingChanged += (value) => {
             Extensions.SetBool(musicToggle_key, value);
             PlayerPrefs.Save();

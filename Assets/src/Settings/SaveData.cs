@@ -22,8 +22,16 @@ public class SaveData : MonoBehaviour
         Instance = this;
     }
 
-    public bool ResetSaveData = false;
+    private void Start()
+    {
+        if (ResetSave)
+        {
+            PlayerPrefs.DeleteAll();
+            ResetSave = false;
+        }
+    }
 
+    public bool ResetSave = false;
 
     public static void Save(LevelLocation location, LevelScoreData data)
     {
@@ -36,7 +44,7 @@ public class SaveData : MonoBehaviour
     {
         if (Instance == null) return new LevelScoreData();
 
-        return Instance.ResetSaveData ? new LevelScoreData() : _loadData(location.ToString());
+        return _loadData(location.ToString());
     }
     
     public static void Persist()

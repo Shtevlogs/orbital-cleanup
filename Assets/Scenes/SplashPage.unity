@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391dfe3968b250a4c88dd550d8c3022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuMusic: {fileID: 0}
+  MenuMusic: {fileID: 8300000, guid: d4c3b64da5e02ca44b62cfebae37e627, type: 3}
 --- !u!114 &1393792480
 MonoBehaviour:
   m_ObjectHideFlags: 0

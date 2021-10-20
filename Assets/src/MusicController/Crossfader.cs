@@ -29,7 +29,8 @@ public class Crossfader
 
         if (active)
         {
-            _getSource(currentSource).Play();
+            Source1.Play();
+            Source2.Play();
         }
         else
         {

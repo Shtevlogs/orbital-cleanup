@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [ExecuteAlways]
 public class LevelLoader : MonoBehaviour
@@ -122,7 +124,9 @@ public class LevelLoader : MonoBehaviour
             WorkingLevel.MaxCameraRange = cameraBehaviour.MaxBounds.x;
         }
 
+#if UNITY_EDITOR
         EditorUtility.SetDirty(WorkingLevel);
+#endif
     }
 
     public void BeginLevelLoad() 
