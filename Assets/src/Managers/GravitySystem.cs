@@ -77,7 +77,7 @@ public class GravitySystem : MonoBehaviour
         InitializePlanets();
 
         var closestPlanet = referenceBody == null ? 
-            planets.OrderBy(x => Vector2.Distance(me.position, x.transform.position)).FirstOrDefault() : 
+            planets.OrderBy(x => -x.Mass / Mathf.Pow(Vector2.Distance(me.position, x.transform.position),2f)).FirstOrDefault() : 
             referenceBody;
 
         if (closestPlanet == null) return null;

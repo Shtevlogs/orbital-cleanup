@@ -29,8 +29,9 @@ MonoBehaviour:
     Velocity: {x: 0.1, y: 3.75}
     Rotation: 0
     FuelLevel: 1
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
-  Name: Orbital Training
+  Name: Getting Back
   Time: -1
   StartingFuel: 0.18
   StartingHealth: 1

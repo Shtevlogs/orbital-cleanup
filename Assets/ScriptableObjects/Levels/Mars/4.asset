@@ -61,9 +61,10 @@ MonoBehaviour:
     Velocity: {x: -0.635, y: 0.635}
     Rotation: 0
     FuelLevel: 0.5
+  Aliens: []
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
   Name: Blastback
-  Time: -1
+  Time: 30
   StartingFuel: 0.006
   StartingHealth: 2
   MaxCameraRange: 9

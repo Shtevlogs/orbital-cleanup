@@ -12,35 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  LevelScene: 9
+  LevelScene: 8
   PlayerStart:
-    Position: {x: 0, y: -4.73}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -6.06, y: -0.09}
+    Velocity: {x: 0, y: 2.5}
     Rotation: 0
     FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: 5.14, y: 2.11}
+    Velocity: {x: 1, y: -2.55}
     Rotation: 0
     FuelLevel: 0.5
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
+  - Position: {x: 5.09, y: -2.11}
+    Velocity: {x: -1, y: -2.55}
+    Rotation: 0
     FuelLevel: 0.5
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
-    FuelLevel: 0.5
+  Bombs: []
+  Fuels: []
   Aliens:
-  - Position: {x: 10.43, y: 0.03}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: 5.51, y: -0.07}
+    Velocity: {x: 0, y: -2.75}
     Rotation: 0
     FuelLevel: 0.5
-  Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: GloopHo!
+  Music: {fileID: 8300000, guid: 185a7573391bec342bff0700aa116785, type: 3}
+  Name: Welcome to Gloop!
   Time: -1
   StartingFuel: 1
-  StartingHealth: 3
-  MaxCameraRange: 9
+  StartingHealth: 1
+  MaxCameraRange: 20

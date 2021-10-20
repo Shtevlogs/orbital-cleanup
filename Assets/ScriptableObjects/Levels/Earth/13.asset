@@ -14,24 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 6
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
-    Rotation: 0
+    Position: {x: 2.49, y: 0.03}
+    Velocity: {x: 0, y: 0}
+    Rotation: 270.54532
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
+  - Position: {x: 4.74, y: 0.04}
     Velocity: {x: 0, y: 2}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
+    FuelLevel: 0.5
+  - Position: {x: 6.65, y: 1.22}
+    Velocity: {x: -0.24, y: 1.71}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -6.3399997, y: -2.6600003}
+    Velocity: {x: -0.7, y: 1.77}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -1.1199999, y: -6.1800003}
+    Velocity: {x: -1.9, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 5.2, y: 2.08}
+    Velocity: {x: -0.7, y: 1.77}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -5.8799996, y: -0.6200004}
     Velocity: {x: 0, y: 2}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -7.79, y: -1.8000004}
+    Velocity: {x: -0.24, y: 1.71}
+    Rotation: 0
+    FuelLevel: 0.5
+  Bombs:
+  - Position: {x: -1.68, y: -11.35}
+    Velocity: {x: 1.5, y: 0.25}
+    Rotation: 0
+    FuelLevel: 0.5
+  Fuels:
+  - Position: {x: 4.07, y: 3.95}
+    Velocity: {x: -1.28, y: 1.38}
     Rotation: -42
+    FuelLevel: 0.5
+  - Position: {x: -4.9, y: -4.71}
+    Velocity: {x: -1.28, y: 1.38}
+    Rotation: -42
+    FuelLevel: 0.5
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
-  Name: Orbital Training
+  Name: Kepler Risk Level 9
   Time: -1
   StartingFuel: 1
-  StartingHealth: 1
-  MaxCameraRange: 15
+  StartingHealth: 2
+  MaxCameraRange: 9

@@ -14,24 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 7
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -0.09, y: -10.03}
+    Velocity: {x: -1, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: 10.1, y: 0.01}
+    Velocity: {x: 0, y: -1}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
+    FuelLevel: 0.5
+  - Position: {x: -0.04, y: 10.04}
+    Velocity: {x: 1, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -9.97, y: 0.05}
+    Velocity: {x: 0, y: 1}
+    Rotation: 0
+    FuelLevel: 0.5
+  Bombs: []
+  Fuels: []
+  Aliens: []
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: Mars Right
-  Time: -1
+  Name: High Orbit Scrap Extraction
+  Time: 30
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 9

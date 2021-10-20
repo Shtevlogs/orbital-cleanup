@@ -5,6 +5,13 @@ using UnityEngine.InputSystem;
 
 public class CameraBehaviour : MonoBehaviour
 {
+    public static CameraBehaviour Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     [SerializeField]
     private float lead = 1f;
     [SerializeField]
@@ -18,8 +25,14 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField]
     public Vector2 MaxBounds;
 
+    public Transform Background;
+
     [SerializeField]
     private float minZoom = 4f;
+    [SerializeField]
+    private float maxZoom = 1000f;
+
+    public bool ForceMaxZoom = false;
 
     [SerializeField]
     private new Camera camera;
@@ -53,9 +66,15 @@ public class CameraBehaviour : MonoBehaviour
             Mathf.Clamp(leadPos.y, -MaxBounds.y, MaxBounds.y),
             transform.position.z);
 
-        camera.orthographicSize = Mathf.Clamp(((Vector2)transform.position - center).magnitude, minZoom, 100f);
+        var zoom = ForceMaxZoom ? (new Vector2(MaxBounds.x,MaxBounds.y)).magnitude * 2f : ((Vector2)transform.position - center).magnitude;
 
-        cameraBounds = BuildRect(transform.position, new Vector2(camera.orthographicSize * 2 * camera.aspect, camera.orthographicSize * 2));
+        camera.orthographicSize = Mathf.Lerp(camera.orthographicSize,
+            Mathf.Clamp(zoom, minZoom, maxZoom), 
+            Time.unscaledDeltaTime);
+
+        Background.localScale = Vector3.one * 0.25f * camera.orthographicSize;
+
+        cameraBounds = BuildRect(transform.position, new Vector2(camera.orthographicSize * 1.25f * camera.aspect, camera.orthographicSize * 2));
 
         if (cameraBounds.Contains((Vector2)target.position - cameraBounds.position, true))
         {

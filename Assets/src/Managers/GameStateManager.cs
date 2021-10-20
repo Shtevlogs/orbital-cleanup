@@ -58,6 +58,7 @@ public class GameStateManager : MonoBehaviour
         //start countdown
         countdownTimer.gameObject.SetActive(true);
         countdownTimer.StartTimer();
+        CameraBehaviour.Instance.ForceMaxZoom = true;
 
         if(levelLoader.WorkingLevel.Time > 0)
         {
@@ -102,6 +103,7 @@ public class GameStateManager : MonoBehaviour
         if(gameTimer.gameObject.activeSelf) gameTimer.StartTimer();
         countdownTimer.gameObject.SetActive(false);
         roundStartTime = Time.time;
+        CameraBehaviour.Instance.ForceMaxZoom = false;
     }
 
     private void _onRoundEnd()

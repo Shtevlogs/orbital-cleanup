@@ -26,7 +26,7 @@ public class OrbitalRenderer : MonoBehaviour
             return;
         }
 
-        var points = orbit.GetLineSegments(LineSegments, transform.position);
+        var points = orbit.GetLineSegments(LineSegments, transform.parent.position);
 
         if(orbit.semimajoraxis < 0 && points.Length >= 4)
         {

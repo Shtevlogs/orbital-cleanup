@@ -14,24 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 7
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -0.06, y: -2.63}
+    Velocity: {x: -2, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -0.02, y: -3.43}
+    Velocity: {x: 1.75, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 6.12, y: -8.73}
+    Velocity: {x: 0.8, y: 0.6}
+    Rotation: 0
+    FuelLevel: 0.5
   Bombs:
   - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
+    Velocity: {x: 0, y: -1.5}
     Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
+    FuelLevel: 0.5
+  Fuels: []
+  Aliens:
+  - Position: {x: 0, y: 2.92}
+    Velocity: {x: -1.79, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 3.26, y: -3.19}
+    Velocity: {x: 1.05, y: 1.05}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 3.21, y: 3.24}
+    Velocity: {x: -1.05, y: 1.05}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 7.7, y: -1.44}
+    Velocity: {x: 0.25, y: 1.15}
+    Rotation: 0
+    FuelLevel: 0.5
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: Mars Right
-  Time: -1
-  StartingFuel: 1
+  Name: Abduction Relay
+  Time: 20
+  StartingFuel: 0
   StartingHealth: 1
   MaxCameraRange: 9

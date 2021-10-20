@@ -59,9 +59,12 @@ public class PlayerController : MonoBehaviour
 
     private bool captured;
 
+    private OrbitalRenderer orbitalRender;
+
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        orbitalRender = GetComponentInChildren<OrbitalRenderer>();
 
         basicmodeltransform = modelTransform.localScale;
 
@@ -114,11 +117,15 @@ public class PlayerController : MonoBehaviour
         if (captured)
         {
             rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            orbitalRender.gameObject.SetActive(false);
         }
         else
         {
             rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            orbitalRender.gameObject.SetActive(true);
         }
+
+        CameraBehaviour.Instance.ForceMaxZoom = captured;
     }
 
     public bool HasZeroMovement()

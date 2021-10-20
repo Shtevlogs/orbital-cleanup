@@ -17,20 +17,37 @@ MonoBehaviour:
     Position: {x: 0, y: -3.15}
     Velocity: {x: -2.5, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -10.13, y: 0}
+    Velocity: {x: 0, y: 1.4}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
+    FuelLevel: 0.5
+  - Position: {x: 10.13, y: 0}
+    Velocity: {x: 0, y: -1.4}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 0, y: -10.13}
+    Velocity: {x: -1.4, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 0, y: 10.13}
+    Velocity: {x: 1.4, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  Bombs: []
   Fuels:
   - Position: {x: -4.96, y: 0.07}
     Velocity: {x: 0, y: 2}
     Rotation: -42
+    FuelLevel: 0.5
+  - Position: {x: 11.28, y: 0.07}
+    Velocity: {x: 0, y: 1.35}
+    Rotation: -42
+    FuelLevel: 0.5
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
-  Name: Orbital Training
+  Name: Gravitational Interference
   Time: -1
   StartingFuel: 1
   StartingHealth: 1

@@ -14,24 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 8
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -4.66, y: -0.17}
+    Velocity: {x: 0, y: -3}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -21.74, y: -1.09}
+    Velocity: {x: -0.05, y: -0.25}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
-  Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: GloopHo!
+    FuelLevel: 0.5
+  Bombs: []
+  Fuels: []
+  Aliens:
+  - Position: {x: 4.56, y: -0.14}
+    Velocity: {x: 0, y: -3}
+    Rotation: 0
+    FuelLevel: 0.5
+  Music: {fileID: 8300000, guid: 185a7573391bec342bff0700aa116785, type: 3}
+  Name: Pinball
   Time: -1
-  StartingFuel: 1
+  StartingFuel: 0.1
   StartingHealth: 1
-  MaxCameraRange: 9
+  MaxCameraRange: 20

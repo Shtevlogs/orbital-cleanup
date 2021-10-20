@@ -14,24 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 8
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: -0.01, y: 4.65}
+    Velocity: {x: -3, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -3.68, y: -9.49}
+    Velocity: {x: 1.87, y: -0.65}
     Rotation: 0
+    FuelLevel: 0.5
   Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
-  Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: GloopHo!
+  - Position: {x: -7.47, y: -0.04}
+    Velocity: {x: 0, y: -2.3}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -0.17, y: -10.1}
+    Velocity: {x: 2, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -6.35, y: -8.03}
+    Velocity: {x: 1.6, y: -1.15}
+    Rotation: 0
+    FuelLevel: 0.5
+  Fuels: []
+  Aliens:
+  - Position: {x: 7.24, y: 0.15}
+    Velocity: {x: 0, y: 2.372}
+    Rotation: 0
+    FuelLevel: 0.5
+  Music: {fileID: 8300000, guid: 185a7573391bec342bff0700aa116785, type: 3}
+  Name: High Risk Target
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
-  MaxCameraRange: 9
+  MaxCameraRange: 20

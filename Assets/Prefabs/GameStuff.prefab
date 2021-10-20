@@ -730,7 +730,10 @@ MonoBehaviour:
   transition: 50
   center: {x: 0, y: 0}
   MaxBounds: {x: 0, y: 0}
+  Background: {fileID: 311964445874978448}
   minZoom: 3
+  maxZoom: 1000
+  ForceMaxZoom: 0
   camera: {fileID: 311964445854002367}
   positionIndicator: {fileID: 1207506405007197268}
 --- !u!81 &4504398599133613542

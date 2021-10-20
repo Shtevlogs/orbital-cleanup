@@ -12,26 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
-  LevelScene: 8
+  LevelScene: 9
   PlayerStart:
-    Position: {x: 0, y: -3.15}
-    Velocity: {x: -2.5, y: 0}
+    Position: {x: 22, y: -1.54}
+    Velocity: {x: 0, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: 1.03, y: 5.47}
+    Velocity: {x: 0, y: 0}
     Rotation: 0
-  Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
-  Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
-    Rotation: -42
-  Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
-  Name: GloopHo!
+    FuelLevel: 0.5
+  Bombs: []
+  Fuels: []
+  Aliens:
+  - Position: {x: -2.75, y: 5.02}
+    Velocity: {x: 2.3, y: 1.35}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 2.75, y: 5.02}
+    Velocity: {x: 2.3, y: -1.35}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 0.01, y: -9.77}
+    Velocity: {x: -2, y: 0}
+    Rotation: 0
+    FuelLevel: 0.5
+  Music: {fileID: 8300000, guid: 185a7573391bec342bff0700aa116785, type: 3}
+  Name: Get to the party!
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
-  MaxCameraRange: 9
+  MaxCameraRange: 20
