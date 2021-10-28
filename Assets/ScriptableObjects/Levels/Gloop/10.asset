@@ -44,3 +44,10 @@ MonoBehaviour:
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 20
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: e646a164f71f5bd4ab8a643cbd171a10, type: 2}
+    Phrases:
+    - Dialogue: You've done a great job!
+    - Dialogue: You are invited to our Party Moon
+    - Dialogue: . . . . .
+    - Dialogue: To help us clean up

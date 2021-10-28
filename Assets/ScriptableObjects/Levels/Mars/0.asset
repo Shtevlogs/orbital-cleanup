@@ -29,9 +29,16 @@ MonoBehaviour:
     FuelLevel: 0.5
   Bombs: []
   Fuels: []
+  Aliens: []
   Music: {fileID: 8300000, guid: 045fba5bca55abc41bf69b3f7dc72cda, type: 3}
   Name: Get Your Ass To Mars
   Time: 15
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 9
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: 760ca31685ee64641a71b77de4c5065b, type: 2}
+    Phrases:
+    - Dialogue: Approaching Mars orbit
+    - Dialogue: Be warned recruit
+    - Dialogue: you'll need to do your job fast to make it out here

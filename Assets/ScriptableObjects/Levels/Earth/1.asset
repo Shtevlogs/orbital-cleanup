@@ -17,18 +17,28 @@ MonoBehaviour:
     Position: {x: 0.1, y: -4.73}
     Velocity: {x: 2.05, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 3.19, y: -1.26}
     Velocity: {x: 0.9, y: 2.3}
     Rotation: 50
+    FuelLevel: 0.5
   Bombs: []
   Fuels:
   - Position: {x: -6.42, y: -0.04}
     Velocity: {x: 0, y: 1.5}
     Rotation: 0
+    FuelLevel: 0.5
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: 'Rocketry 102: Fuel'
   Time: -1
   StartingFuel: 0
   StartingHealth: 1
   MaxCameraRange: 9
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: ef798d94a26c6354195b0b312136376c, type: 2}
+    Phrases:
+    - Dialogue: The bar at the top left of your screen is your fuel meter
+    - Dialogue: It's currently empty, we're sending you some fuel
+    - Dialogue: 'GOAL: Wait for refuel and collect all scrap in Earth''s orbit'

@@ -17,18 +17,32 @@ MonoBehaviour:
     Position: {x: 1.89, y: -4.04}
     Velocity: {x: -2.2, y: -0.7}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 4.1, y: -2.86}
     Velocity: {x: 1.6, y: 1.6}
     Rotation: 0
+    FuelLevel: 0.5
   Bombs:
   - Position: {x: 1.35, y: -2.9}
     Velocity: {x: -2.9, y: -0.9}
     Rotation: 0
+    FuelLevel: 0.5
   Fuels: []
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: 'Rocketry 103: Bombs?'
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 9
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: ef798d94a26c6354195b0b312136376c, type: 2}
+    Phrases:
+    - Dialogue: The most dangerous objects in space, BOMBS
+    - Dialogue: On the top left of your screen you'll see the amount-
+    - Dialogue: -of health you have on this mission
+    - Dialogue: (typically you'll have 1)
+    - Dialogue: If you touch a bomb, you'll lose health
+    - Dialogue: If a bomb touches scrap, you'll lose health
+    - Dialogue: 'GOAL: Collect all scrap in Earth''s orbit'

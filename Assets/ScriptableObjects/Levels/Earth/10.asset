@@ -32,3 +32,8 @@ MonoBehaviour:
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 20
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: ef798d94a26c6354195b0b312136376c, type: 2}
+    Phrases:
+    - Dialogue: We'll have to send you to the Moon for this one
+    - Dialogue: Good luck!

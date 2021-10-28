@@ -2337,8 +2337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 290, y: 140}
+  m_AnchoredPosition: {x: 53.117867, y: 0}
+  m_SizeDelta: {x: 296.2357, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9064702550840204914
 CanvasRenderer:
@@ -2368,7 +2368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to orbit, well virtual orbit anyway
+  m_text: 'GOAL: Wait for refuel and collect all scrap in Earth''s orbit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed35510c95fdaad4e80717849e5a9173, type: 2}
   m_sharedMaterial: {fileID: 3774966094636184441, guid: ed35510c95fdaad4e80717849e5a9173, type: 2}
