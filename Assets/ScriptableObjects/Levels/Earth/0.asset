@@ -17,15 +17,27 @@ MonoBehaviour:
     Position: {x: -0.06, y: -3.44}
     Velocity: {x: 2.5, y: 0}
     Rotation: 0
+    FuelLevel: 0.5
   Scraps:
   - Position: {x: 4.89, y: -0.08}
     Velocity: {x: 0, y: 2.1}
     Rotation: -20
+    FuelLevel: 0.5
   Bombs: []
   Fuels: []
+  Aliens: []
   Music: {fileID: 8300000, guid: 517ede98c52cdb3409556f1a0d74b066, type: 3}
   Name: 'Rocketry 101: Thrust'
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 9
+  Dialogue:
+    Speaker: {fileID: 11400000, guid: ef798d94a26c6354195b0b312136376c, type: 2}
+    Phrases:
+    - Dialogue: Welcome to orbit, well virtual orbit anyway
+    - Dialogue: Here we will train you on basic operation-
+    - Dialogue: -before shipping you off to actual earth orbit
+    - Dialogue: Behind this dialogue box is the control nob,
+    - Dialogue: use it to control your thrust and reach the scrap
+    - Dialogue: 'GOAL: Collect all scrap in earth''s orbit'

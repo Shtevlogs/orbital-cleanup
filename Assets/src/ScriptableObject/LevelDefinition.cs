@@ -26,4 +26,6 @@ public class LevelDefinition : ScriptableObject
     public int StartingHealth = 3;
 
     public float MaxCameraRange = 9f;
+
+    public DialogueDefinition Dialogue;
 }

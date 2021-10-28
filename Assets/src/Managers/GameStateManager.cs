@@ -55,20 +55,17 @@ public class GameStateManager : MonoBehaviour
         //reset planets
         PlanetManager.ResetPlanets();
 
-        //start countdown
-        countdownTimer.gameObject.SetActive(true);
-        countdownTimer.StartTimer();
-        CameraBehaviour.Instance.ForceMaxZoom = true;
+        DalogueUI.OnDialogueFinish += _onDialogueFinished;
 
-        if(levelLoader.WorkingLevel.Time > 0)
+        //start dialogue
+        var dialogue = levelLoader.WorkingLevel.Dialogue;
+        if (dialogue.Phrases == null || dialogue.Phrases.Length == 0)
         {
-            //reset round timer
-            gameTimer.StartingTime = levelLoader.WorkingLevel.Time;
-            gameTimer.ResetTimer();
+            _onDialogueFinished();
         }
         else
         {
-            gameTimer.gameObject.SetActive(false);
+            DalogueUI.StartDialogue(dialogue.Phrases, dialogue.Speaker.LipFlapSprite1, dialogue.Speaker.LipFlapSprite2, dialogue.Speaker.name);
         }
     }
 
@@ -95,6 +92,28 @@ public class GameStateManager : MonoBehaviour
         IsPaused = false;
         //pause physics
         Time.timeScale = 1f;
+    }
+
+    private void _onDialogueFinished()
+    {
+        //only need this to fire once per binding
+        DalogueUI.OnDialogueFinish -= _onDialogueFinished;
+
+        //start countdown
+        countdownTimer.gameObject.SetActive(true);
+        countdownTimer.StartTimer();
+        CameraBehaviour.Instance.ForceMaxZoom = true;
+
+        if (levelLoader.WorkingLevel.Time > 0)
+        {
+            //reset round timer
+            gameTimer.StartingTime = levelLoader.WorkingLevel.Time;
+            gameTimer.ResetTimer();
+        }
+        else
+        {
+            gameTimer.gameObject.SetActive(false);
+        }
     }
 
     private void _onCountdownEnd()
