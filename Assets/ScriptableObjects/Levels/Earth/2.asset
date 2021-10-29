@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ebd258aef56f14694032ffebaf302a, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  LevelScene: 4
+  LevelScene: 5
   PlayerStart:
     Position: {x: 1.89, y: -4.04}
     Velocity: {x: -2.2, y: -0.7}
@@ -20,7 +20,7 @@ MonoBehaviour:
     FuelLevel: 0.5
   Scraps:
   - Position: {x: 4.1, y: -2.86}
-    Velocity: {x: 1.6, y: 1.6}
+    Velocity: {x: 1.4, y: 1.4}
     Rotation: 0
     FuelLevel: 0.5
   Bombs:

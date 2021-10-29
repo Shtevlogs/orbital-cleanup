@@ -11,6 +11,9 @@ public class DalogueUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        TextSound.Init();
+
         gameObject.SetActive(false);
     }
 
