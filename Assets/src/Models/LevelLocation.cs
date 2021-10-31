@@ -10,6 +10,8 @@ public struct LevelLocation
     public LevelCategory Category;
     public int Index;
 
+    public bool AdFree { get { return Category == LevelCategory.Earth && Index <= 3; } }
+
     public override string ToString()
     {
         return Category.ToString() + "." + Index.ToString();
