@@ -17,6 +17,9 @@ public class Alien : MonoBehaviour
     public Animator SuccAnimator;
     public Animator CountdownAnimator;
 
+    public AudioReference SuccSFX;
+    public AudioReference ShootSFX;
+
     public Transform AimIndicator;
 
     private Rigidbody2D body;
@@ -47,24 +50,28 @@ public class Alien : MonoBehaviour
     {
         if(myState == AlienState.Nothing)
         {
+            SuccSFX.Toggle(false);
             SuccAnimator.SetBool("Succ", false);
             CountdownAnimator.SetBool("Countdown", false);
             CountdownAnimator.SetFloat("Rate", 0f);
         }
         else if(myState == AlienState.Searching)
         {
+            SuccSFX.Toggle(false);
             SuccAnimator.SetBool("Succ", false);
             CountdownAnimator.SetBool("Countdown", false);
             CountdownAnimator.SetFloat("Rate", 0f);
         }
         else if(myState == AlienState.Succing)
         {
+            SuccSFX.Toggle(true);
             SuccAnimator.SetBool("Succ", true);
             CountdownAnimator.SetBool("Countdown", false);
             CountdownAnimator.SetFloat("Rate", 0f);
         }
         else if(myState == AlienState.Aiming)
         {
+            SuccSFX.Toggle(false);
             SuccAnimator.SetBool("Succ", false);
             CountdownAnimator.SetBool("Countdown", true);
             CountdownAnimator.SetFloat("Rate", 1f - (aimTimeLeft / AimTimeTotal));
@@ -179,6 +186,8 @@ public class Alien : MonoBehaviour
         coolDown = 0.5f;
         shotPrimed = false;
         aiming = false;
+
+        ShootSFX.Play();
     }
 
     private void _turnWithPlayer()

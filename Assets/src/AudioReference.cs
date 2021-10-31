@@ -29,6 +29,23 @@ public class AudioReference
         AudioSource.Play();
     }
 
+    public void Toggle(bool play)
+    {
+        if (!volumeToggle || AudioSource == null) return;
+
+        AudioSource.volume = MaxVolume;
+
+        if (play && ! AudioSource.isPlaying)
+        {
+            AudioSource.Play();
+        }
+
+        if(!play && AudioSource.isPlaying)
+        {
+            AudioSource.Stop();
+        }
+    }
+
     public void Fade(float phase)
     {
         if (AudioSource != null)
