@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class MusicController : MonoBehaviour
 
     [SerializeField]
     private Crossfader AudioCrossfader;
+
+    [SerializeField]
+    private AudioMixer Mixer;
+    [SerializeField]
+    private AudioMixerSnapshot[] FilterSnapshots;
 
     private float _targetvolume = 1f;
     private float TargetVolume { get { return _targetvolume; } set { _targetvolume = Mathf.Clamp01(value); } }
@@ -58,9 +64,20 @@ public class MusicController : MonoBehaviour
         AudioCrossfader.SetVolume(currentVolume);
     }
 
+    public static void UpdatePlanetDistance(float dist)
+    {
+        if (Instance == null) return;
+
+        dist = Mathf.Clamp01(dist);
+
+        Instance.Mixer.TransitionToSnapshots(Instance.FilterSnapshots, new float[] { dist, 1f - dist }, Time.unscaledDeltaTime);
+    }
+
     public static void PlayTrack(AudioClip track, float fadeTime = 1f)
     {
         if (Instance == null) return;
+
+        if (Instance.AudioCrossfader.IsTrackPlaying(track)) return;
 
         var routine = Instance.AudioCrossfader.PlayTrack(track, fadeTime);
         if(routine != null)

@@ -177,6 +177,9 @@ public class LevelLoader : MonoBehaviour
         player.transform.position = WorkingLevel.PlayerStart.Position;
         player.transform.rotation = Quaternion.Euler(0,0,WorkingLevel.PlayerStart.Rotation);
 
+        PlayerController.FullMusicRadius = PlanetManager.GetRootPlanetRadius();
+        PlayerController.NoMusicRadius = WorkingLevel.MaxCameraRange;
+
         var playerOrbitHandler = player.GetComponent<OrbitHandler>();
         playerOrbitHandler.StartingVelocity = WorkingLevel.PlayerStart.Velocity;
         playerOrbitHandler.ResetVelocity();

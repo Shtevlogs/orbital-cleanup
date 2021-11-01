@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
     private OrbitalRenderer orbitalRender;
 
+    public static float FullMusicRadius = 1f;
+    public static float NoMusicRadius = 10f;
+
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -135,6 +138,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        var dist = transform.position.magnitude;
+        MusicController.UpdatePlanetDistance(dist < FullMusicRadius ? 0f : ((dist - FullMusicRadius) / NoMusicRadius));
+
         if(currentMove != Vector2.zero)
         {
             var angle = Vector2.SignedAngle(currentFacingDir, currentMove);

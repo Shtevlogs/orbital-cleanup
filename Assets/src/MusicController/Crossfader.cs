@@ -23,6 +23,11 @@ public class Crossfader
         return Source1.isPlaying || Source2.isPlaying;
     }
 
+    public bool IsTrackPlaying(AudioClip clip)
+    {
+        return (Source1.isPlaying && Source1.clip == clip) || (Source2.isPlaying && Source2.clip == clip);
+    }
+
     public void Toggle(bool active) 
     {
         this.active = active;

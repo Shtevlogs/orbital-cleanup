@@ -33,4 +33,12 @@ public class PlanetManager : MonoBehaviour
                 planet.GetComponent<OrbitHandler>().ResetVelocity();
         }
     }
+
+    public static float GetRootPlanetRadius()
+    {
+        if (Instance == null) return 1f;
+
+        var planet = Instance.transform.GetChild(0);
+        return planet.GetComponent<Planet>().SurfaceRadius * 2f;
+    }
 }
