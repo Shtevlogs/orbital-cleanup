@@ -152,12 +152,12 @@ public class GameStateManager : MonoBehaviour
 
         var totalTime = Time.time - Instance.roundStartTime;
 
-        var timePercent = 1f - (Instance.gameTimer.StartingTime == 0 ? (totalTime / 120f) : (totalTime / (float)Instance.gameTimer.StartingTime));
+        var timePercent = 1f - (levelDef.Time <= 0 ? Mathf.Clamp01(0.25f + (totalTime / 240f)) : (totalTime / (float)Instance.gameTimer.StartingTime));
         var scrapsCollected = PlayerController.Instance.ScrapCollectedCount;
         var scrapsLost = levelDef.Scraps.Count - PlayerController.Instance.ScrapCollectedCount;
-        var playerHealthPercent = (float)PlayerController.Instance.Health / 3f;
+        var playerHealthPercent = (float)PlayerController.Instance.Health / (float) PlayerController.Instance.MaxHealth;
 
-        var score = (int)Mathf.Clamp(1000f * timePercent + 100f * scrapsCollected - 200f * scrapsLost + 300f * playerHealthPercent, 0f, float.MaxValue);
+        var score = (int)Mathf.Clamp(1000f * timePercent + 100f * scrapsCollected + 300f * playerHealthPercent + 500f * Fuel.FuelInLevel + 500f + PlayerController.Instance.FuelLevel, 0f, float.MaxValue);
 
         Instance.gameTimer.StopTimer();
 
