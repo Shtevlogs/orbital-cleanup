@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
     private OrbitalRenderer orbitalRender;
 
+    [SerializeField]
+    private Animator MyAnimator;
+
     public static float FullMusicRadius = 1f;
     public static float NoMusicRadius = 10f;
 
@@ -103,7 +106,9 @@ public class PlayerController : MonoBehaviour
     {
         toPickup.PickupAction(this);
 
-        if(toPickup is Scrap)
+        MyAnimator.SetTrigger("Pickup");
+
+        if (toPickup is Scrap)
         {
             pickupAudio.Play(scrapPickupClip);
         }

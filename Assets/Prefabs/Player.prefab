@@ -1290,6 +1290,7 @@ MonoBehaviour:
     MaxVolume: 0.15
   fuelPickupClip: {fileID: 8300000, guid: 54d589f8d0abc764e8aed58fb279b79a, type: 3}
   scrapPickupClip: {fileID: 8300000, guid: edec36451c0c067458200c677fc5f88b, type: 3}
+  MyAnimator: {fileID: 7806915433876232016}
 --- !u!50 &7806915433359809511
 Rigidbody2D:
   serializedVersion: 4
