@@ -43,10 +43,7 @@ MonoBehaviour:
   Dialogue:
     Speaker: {fileID: 11400000, guid: e646a164f71f5bd4ab8a643cbd171a10, type: 2}
     Phrases:
-    - Dialogue: Approaching Mars orbit
     - Dialogue: '&&%#(@)'
     - Dialogue: -achem
-    - Dialogue: We have purchased your services-
-    - Dialogue: -from your overloards on Earth
-    - Dialogue: We party too hard and have no idea-
-    - Dialogue: -how to clean it up. Please Help!
+    - Dialogue: We have purchased your services from your overloards on Earth
+    - Dialogue: We party too hard and have no idea how to clean it up. Please Help!
