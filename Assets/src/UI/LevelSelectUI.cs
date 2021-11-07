@@ -11,6 +11,7 @@ public class LevelSelectUI : MonoBehaviour
     public Transform PlanetPositionReference;
     public Transform LevelListContent;
     public TextMeshProUGUI PlanetTitle;
+    public TextMeshProUGUI LevelUnlockText;
 
     public void Open(LevelCategory category)
     {
@@ -20,6 +21,19 @@ public class LevelSelectUI : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+
+        PlanetTitle.text = category.ToString();
+
+        var progress = LevelUnlocks.LevelUnlockCount(category);
+        
+        if(progress == null || progress[0] >= progress[1])
+        {
+            LevelUnlockText.text = "All Unlocked!";
+        }
+        else
+        {
+            LevelUnlockText.text = "Next Unlock: " + progress[0] + "/" + progress[1];
+        }
 
         var levelList = LevelUnlocks.GetLevelList(category);
 

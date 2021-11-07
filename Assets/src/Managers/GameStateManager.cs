@@ -99,10 +99,12 @@ public class GameStateManager : MonoBehaviour
     {
         if (RoundStarting && Instance != null && Instance.countdownTimer != null)
             Instance.countdownTimer.ResumeTimer();
-
-        IsPaused = false;
-        //pause physics
-        Time.timeScale = 1f;
+        else
+        {
+            IsPaused = false;
+            //unpause physics
+            Time.timeScale = 1f;
+        }
     }
 
     private void _onDialogueFinished()
@@ -163,6 +165,9 @@ public class GameStateManager : MonoBehaviour
 
         //save data
         var currentLevelData = SaveData.Load(LevelLoader.CurrentLevelLocation);
+
+        var newLevelsUnlocked = !currentLevelData.Completed && success && LevelUnlocks.WillUnlockLevels(LevelLoader.CurrentLevelLocation);
+
         currentLevelData.BestTime = currentLevelData.BestTime == -1 ? (int)totalTime : Mathf.Min(currentLevelData.BestTime, (int)totalTime);
         currentLevelData.HighScore = Mathf.Max(currentLevelData.HighScore, score);
         currentLevelData.Completed = currentLevelData.Completed || success;
@@ -170,7 +175,7 @@ public class GameStateManager : MonoBehaviour
         SaveData.Persist();
 
         //gotta do this after saving, duh
-        RoundEndUI.Instance.Activate(success, message, score, (int)totalTime, scrapsLost);
+        RoundEndUI.Instance.Activate(success, message, score, (int)totalTime, scrapsLost, newLevelsUnlocked);
     }
 
     private void _overviewMode(bool active)

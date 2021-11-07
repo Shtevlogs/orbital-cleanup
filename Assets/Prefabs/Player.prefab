@@ -892,7 +892,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.048795916
+        value: 0.09585402
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -900,8 +900,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4988864
-        value: 0.009803921
+        time: 0.50413543
+        value: 0.0450975
         inSlope: 0
         outSlope: 0
         tangentMode: 0

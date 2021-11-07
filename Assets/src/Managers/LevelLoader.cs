@@ -194,7 +194,7 @@ public class LevelLoader : MonoBehaviour
             var newScrapOrbit = newScrap.GetComponent<OrbitHandler>();
             newScrap.transform.position = scrapPlacement.Position;
             newScrapOrbit.StartingVelocity = scrapPlacement.Velocity;
-            newScrapOrbit.StartingRotation = scrapPlacement.Rotation;
+            newScrapOrbit.StartingRotation = scrapPlacement.Rotation == 0 ? (Random.value * 180f - 90f) : scrapPlacement.Rotation;
             newScrapOrbit.ResetVelocity();
         }
 
@@ -204,7 +204,7 @@ public class LevelLoader : MonoBehaviour
             var newBombOrbit = newBomb.GetComponent<OrbitHandler>();
             newBomb.transform.position = bombPlacement.Position;
             newBombOrbit.StartingVelocity = bombPlacement.Velocity;
-            newBombOrbit.StartingRotation = bombPlacement.Rotation;
+            newBombOrbit.StartingRotation = bombPlacement.Rotation == 0 ? (Random.value * 180f - 90f) : bombPlacement.Rotation;
             newBombOrbit.ResetVelocity();
         }
 
@@ -214,7 +214,7 @@ public class LevelLoader : MonoBehaviour
             var newFuelOrbit = newFuel.GetComponent<OrbitHandler>();
             newFuel.transform.position = fuelPlacement.Position;
             newFuelOrbit.StartingVelocity = fuelPlacement.Velocity;
-            newFuelOrbit.StartingRotation = fuelPlacement.Rotation;
+            newFuelOrbit.StartingRotation = fuelPlacement.Rotation == 0 ? (Random.value * 180f - 90f) : fuelPlacement.Rotation;
             newFuelOrbit.ResetVelocity();
             newFuel.Value = fuelPlacement.FuelLevel;
         }

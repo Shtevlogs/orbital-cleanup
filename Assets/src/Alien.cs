@@ -44,6 +44,9 @@ public class Alien : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
+        SuccSFX.Init();
+        ShootSFX.Init();
     }
 
     private void _updateAnimators()

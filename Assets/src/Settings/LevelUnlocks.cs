@@ -49,12 +49,42 @@ public class LevelUnlocks : MonoBehaviour
 
         var relaventDef = Instance.UnlockDefs.Where(x => x.Unlocks.Contains(location)).FirstOrDefault();
 
-        return _checkDef(relaventDef, location);
+        return _isComplete(_checkDef(relaventDef));
     }
 
-    private static bool _checkDef(LevelUnlockDefinition unlockDef, LevelLocation location)
+    public static bool WillUnlockLevels(LevelLocation completedLevelLocation)
     {
-        if (unlockDef == null) return true;
+        var relaventDefs = Instance.UnlockDefs.Where(x => x.Prereqs.Contains(completedLevelLocation));
+
+        return relaventDefs.Any(x => {
+            var progress = _checkDef(x);
+
+            return (progress[1] - progress[0]) == 1; //would be unlocked by this level being completed
+        });
+    }
+
+    public static int[] LevelUnlockCount(LevelCategory planet)
+    {
+        var relaventDefs = Instance.UnlockDefs.Where(x => x.Prereqs.Any(y=> y.Category == planet));
+
+        var incompleteDefs = relaventDefs.Where(x => !_isComplete(_checkDef(x)));
+
+        if(incompleteDefs == null || incompleteDefs.Count() == 0)
+        {
+            return new int[] { 1, 1 };
+        }
+
+        var mostCompleteDef = incompleteDefs.OrderBy(x => {
+            var progress = _checkDef(x);
+            return progress[1] - progress[0];
+        }).First();
+
+        return _checkDef(mostCompleteDef);
+    }
+
+    private static int[] _checkDef(LevelUnlockDefinition unlockDef)
+    {
+        if (unlockDef == null) return new int[] { 1, 1 };
 
         var completedCount = 0;
         foreach(var preReqLocation in unlockDef.Prereqs)
@@ -63,12 +93,13 @@ public class LevelUnlocks : MonoBehaviour
                 continue;
 
             completedCount++;
-            if(completedCount >= unlockDef.NumberOfPrereqsRequired)
-            {
-                return true;
-            }
         }
 
-        return false;
+        return new int[] { completedCount, unlockDef.NumberOfPrereqsRequired };
+    }
+
+    private static bool _isComplete(int[] progress)
+    {
+        return progress != null && progress[0] >= progress[1];
     }
 }

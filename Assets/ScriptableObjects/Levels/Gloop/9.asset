@@ -14,29 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelScene: 8
   PlayerStart:
-    Position: {x: 0, y: -3.15}
+    Position: {x: -0.07, y: -5.76}
     Velocity: {x: -2.5, y: 0}
     Rotation: 0
     FuelLevel: 0.5
   Scraps:
-  - Position: {x: 4.207, y: -0.097}
+  - Position: {x: 11.62, y: 0.06}
     Velocity: {x: 0, y: 2}
     Rotation: 0
     FuelLevel: 0.5
+  - Position: {x: -9.86, y: -0.74}
+    Velocity: {x: 0, y: 2}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 3.88, y: -7.31}
+    Velocity: {x: 1.75, y: 1}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -10.73, y: -12.43}
+    Velocity: {x: -1.25, y: 0.1}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -1.81, y: 13.42}
+    Velocity: {x: -1.25, y: 0.1}
+    Rotation: 0
+    FuelLevel: 0.5
   Bombs:
-  - Position: {x: 6.11, y: 0.97}
-    Velocity: {x: 0, y: -2}
-    Rotation: 170
+  - Position: {x: -21.9, y: 1.69}
+    Velocity: {x: 0, y: 0}
+    Rotation: 0
     FuelLevel: 0.5
   Fuels:
-  - Position: {x: -4.96, y: 0.07}
-    Velocity: {x: 0, y: 2}
+  - Position: {x: -4.48, y: -0.13}
+    Velocity: {x: 0, y: 3}
     Rotation: -42
     FuelLevel: 0.5
-  Aliens: []
+  - Position: {x: 7.11, y: -0.59}
+    Velocity: {x: 0, y: 3}
+    Rotation: -42
+    FuelLevel: 0.5
+  Aliens:
+  - Position: {x: 7.21, y: 5.96}
+    Velocity: {x: 2, y: -1}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: 1.19, y: 7.96}
+    Velocity: {x: 2, y: -1}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -3.95, y: -8.28}
+    Velocity: {x: 2, y: -1}
+    Rotation: 0
+    FuelLevel: 0.5
+  - Position: {x: -3.22, y: 11.5}
+    Velocity: {x: -2, y: -0.25}
+    Rotation: 0
+    FuelLevel: 0.5
   Music: {fileID: 8300000, guid: 185a7573391bec342bff0700aa116785, type: 3}
-  Name: Welcome to Gloop!
+  Name: Even More To Deal With
   Time: -1
   StartingFuel: 1
   StartingHealth: 1
   MaxCameraRange: 20
+  Dialogue:
+    Speaker: {fileID: 0}
+    Phrases: []

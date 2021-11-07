@@ -65,4 +65,9 @@ public class PauseUI : MonoBehaviour
         Content.gameObject.SetActive(false);
         GameStateManager.UnPause();
     }
+
+    public void OnQuit()
+    {
+        Application.Quit();
+    }
 }

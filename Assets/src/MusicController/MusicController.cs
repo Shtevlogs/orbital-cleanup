@@ -42,13 +42,26 @@ public class MusicController : MonoBehaviour
         currentVolume = TargetVolume;
     }
 
+    private bool musicJustToggled = false;
+
     private void _onMusicToggle(bool value)
     {
         AudioCrossfader.Toggle(value);
+
+        if (value)
+        {
+            musicJustToggled = true;
+        }
     }
 
     private void Update()
     {
+        if (musicJustToggled)
+        {
+            AudioCrossfader.SetVolume(currentVolume);
+            musicJustToggled = false;
+        }
+
         if (currentVolume == TargetVolume) return;
 
         var direction = currentVolume > TargetVolume ? -1f : 1f;

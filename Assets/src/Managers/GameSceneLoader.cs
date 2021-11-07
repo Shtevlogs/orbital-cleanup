@@ -40,10 +40,12 @@ public class GameSceneLoader : MonoBehaviour
 
         Instance = this;
 
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         DontDestroyOnLoad(this);
 
-        SceneManager.LoadSceneAsync((int)GameScene.Splash, LoadSceneMode.Additive);
-        currentScene = GameScene.Splash;
+        SceneManager.LoadSceneAsync((int)GameScene.MainMenu, LoadSceneMode.Additive);
+        currentScene = GameScene.MainMenu;
     }
 
     public void LoadMenu()

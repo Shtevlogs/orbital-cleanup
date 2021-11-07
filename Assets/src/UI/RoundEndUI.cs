@@ -29,6 +29,8 @@ public class RoundEndUI : MonoBehaviour
 
     public Button nextLevelButton;
 
+    public Transform newLevelsUnlockedDisplay;
+
     private bool success;
 
     private LevelLocation nextLevelLocation;
@@ -38,7 +40,7 @@ public class RoundEndUI : MonoBehaviour
         SuccessFailSound.Init();
     }
 
-    public void Activate(bool success, string message, int score, int time, int scrapLost)
+    public void Activate(bool success, string message, int score, int time, int scrapLost, bool newLevelsUnlocked)
     {
         this.success = success;
 
@@ -57,6 +59,8 @@ public class RoundEndUI : MonoBehaviour
         nextLevelButton.interactable = success && LevelUnlocks.GetUnlockStatus(nextLevelLocation);
 
         Content.gameObject.SetActive(true);
+
+        newLevelsUnlockedDisplay.gameObject.SetActive(newLevelsUnlocked);
     }
 
     public void OnBack()
