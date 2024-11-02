@@ -184,7 +184,7 @@ public class Alien : MonoBehaviour
         PlayerController.Instance.Captured(false);
 
         var playerBody = PlayerController.Instance.GetComponent<Rigidbody2D>();
-        playerBody.velocity = GetComponent<Rigidbody2D>().velocity + shotDir * ExpulsionForce;
+        playerBody.linearVelocity = GetComponent<Rigidbody2D>().linearVelocity + shotDir * ExpulsionForce;
 
         coolDown = 0.5f;
         shotPrimed = false;
