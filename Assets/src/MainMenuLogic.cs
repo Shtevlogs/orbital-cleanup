@@ -7,6 +7,7 @@ public class MainMenuLogic : MonoBehaviour
 {
     public void OnPlay()
     {
+        Debug.Log("Hello");
         GameSceneLoader.Instance.LoadLevelSelect();
     }
 }

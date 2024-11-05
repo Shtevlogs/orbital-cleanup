@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraBehaviour : MonoBehaviour
 {
@@ -49,10 +48,14 @@ public class CameraBehaviour : MonoBehaviour
         }
     }
 
+    /*
+
     public void OnRightStick(InputAction.CallbackContext value)
     {
         leadTargetLocation = value.ReadValue<Vector2>() * lead;
     }
+
+    */
 
     private Rect cameraBounds = new Rect();
     private void Update()

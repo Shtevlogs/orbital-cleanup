@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -78,6 +77,7 @@ public class PlayerController : MonoBehaviour
         pickupAudio.Init();
     }
 
+    /*
     public void OnRightStick(InputAction.CallbackContext value)
     {
         currentMove = value.ReadValue<Vector2>();
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         fireTransform.localScale = new Vector3(1f, FuelLevel > 0f ? currentMove.magnitude: 0f, 1f);
         modelTransform.localScale = basicmodeltransform - new Vector3(0f, basicmodeltransform.y, 0f) * Mathf.Clamp(FuelLevel > 0f ? currentMove.magnitude : 0f, 0f, 0.1f);
     }
+     */
 
     public void Damage()
     {

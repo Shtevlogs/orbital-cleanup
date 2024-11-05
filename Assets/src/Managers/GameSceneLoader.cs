@@ -60,6 +60,8 @@ public class GameSceneLoader : MonoBehaviour
 
     public void LoadLevelSelect()
     {
+        GameStateManager.IsGameplay = false;
+
         if (currentScene == GameScene.LevelSelect) return;
 
         scenesLoading.Add(SceneManager.UnloadSceneAsync((int)currentScene));
@@ -77,6 +79,8 @@ public class GameSceneLoader : MonoBehaviour
             Debug.LogError("Asked To Load A Level That Doesn't Exist");
             return;
         }
+
+        GameStateManager.IsGameplay = true;
 
         loadingUI.Activate();
 

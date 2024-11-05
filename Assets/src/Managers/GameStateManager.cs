@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
@@ -11,6 +10,7 @@ public class GameStateManager : MonoBehaviour
 
     public static bool IsPaused = false;
     public static bool RoundStarting = true;
+    public static bool IsGameplay = false;
 
     [SerializeField]
     private LevelLoader levelLoader;
@@ -24,19 +24,11 @@ public class GameStateManager : MonoBehaviour
     private float roundStartTime;
     private bool roundEnded = false;
 
-    [SerializeField]
-    private Transform testingInputManager;
-
     private void Awake()
     {
         Instance = this;
         countdownTimer.OnTimerEnd += _onCountdownEnd;
         gameTimer.OnTimerEnd += _onRoundEnd;
-
-        if (SceneManager.sceneCount == 1)
-        {
-            testingInputManager.gameObject.SetActive(true);
-        }
     }
 
     private void Start()
