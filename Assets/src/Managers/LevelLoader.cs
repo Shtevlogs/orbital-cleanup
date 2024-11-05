@@ -101,7 +101,7 @@ public class LevelLoader : MonoBehaviour
         }
         WorkingLevel.Aliens = spawnedAlienList;
 
-        var player = FindFirstObjectByType<PlayerController>();
+        var player = Transform.FindObjectOfType<PlayerController>();
 
         if(player == null)
         {
@@ -118,7 +118,7 @@ public class LevelLoader : MonoBehaviour
 
         WorkingLevel.LevelScene = (GameSceneLoader.GameScene)SceneManager.GetActiveScene().buildIndex;
 
-        var cameraBehaviour = FindFirstObjectByType<CameraBehaviour>();
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
         if (cameraBehaviour != null)
         {
             WorkingLevel.MaxCameraRange = cameraBehaviour.MaxBounds.x;
@@ -136,7 +136,7 @@ public class LevelLoader : MonoBehaviour
 
     private void _clearLevel()
     {
-        var player = FindFirstObjectByType<PlayerController>();
+        var player = Transform.FindObjectOfType<PlayerController>();
         if (player != null)
         {
             _destroy(player.gameObject);
@@ -149,7 +149,7 @@ public class LevelLoader : MonoBehaviour
 
         Scrap.ScrapInLevel = 0;
 
-        var cameraBehaviour = FindFirstObjectByType<CameraBehaviour>();
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
         if(cameraBehaviour != null)
         {
             cameraBehaviour.MaxBounds = Vector2.one * 9f;
@@ -232,7 +232,7 @@ public class LevelLoader : MonoBehaviour
         if(Application.isPlaying)
             MusicController.PlayTrack(WorkingLevel.Music);
 
-        var cameraBehaviour = FindFirstObjectByType<CameraBehaviour>();
+        var cameraBehaviour = Transform.FindObjectOfType<CameraBehaviour>();
         if (cameraBehaviour != null)
         {
             cameraBehaviour.MaxBounds = Vector2.one * WorkingLevel.MaxCameraRange;

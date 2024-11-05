@@ -40,7 +40,7 @@ public class PlanetSelectUI : MonoBehaviour
         UpdateValues();
         startingPosition = transform.localPosition;
 
-        otherPlanets = FindObjectsByType<PlanetSelectUI>(FindObjectsSortMode.None).Where(x=> x != this).ToArray();
+        otherPlanets = Transform.FindObjectsOfType<PlanetSelectUI>().Where(x=> x != this).ToArray();
     }
 
     public void UpdateValues() 

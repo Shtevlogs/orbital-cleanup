@@ -46,11 +46,16 @@ public class GameStateManager : MonoBehaviour
 
     private void Initialize()
     {
-        _initialize();
+        StartCoroutine(_initialize());
     }
 
-    private void _initialize()
+    private IEnumerator _initialize()
     {
+        while (AdManager.AdActive)
+        {
+            yield return null;
+        }
+
         roundEnded = false;
 
         _overviewMode(true);
@@ -76,6 +81,7 @@ public class GameStateManager : MonoBehaviour
 
     public static void Retry()
     {
+        AdManager.Instance.ShowAd();
         Instance.Initialize();
     }
 

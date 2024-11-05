@@ -88,6 +88,8 @@ public class GameSceneLoader : MonoBehaviour
 
         currentScene = level.LevelScene;
 
+        AdManager.Instance.ShowAd();
+
         StartCoroutine(_loadScenes());
     }
 
@@ -108,6 +110,11 @@ public class GameSceneLoader : MonoBehaviour
 
                 yield return null;
             }
+        }
+
+        while (AdManager.AdActive)
+        {
+            yield return null;
         }
 
         scenesLoading.Clear();

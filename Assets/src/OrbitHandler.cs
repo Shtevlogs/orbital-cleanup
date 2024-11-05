@@ -29,14 +29,14 @@ public class OrbitHandler : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
 
-        rigidbody.linearVelocity = StartingVelocity;
+        rigidbody.velocity = StartingVelocity;
         rigidbody.angularVelocity = StartingRotation;
 
         orbitalRenderer = orbitalRenderer == null ? GetComponentInChildren<OrbitalRenderer>() : orbitalRenderer;
 
         if (orbitalRenderer == null) return;
 
-        orbitalRenderer.RenderOrbit(GravitySystem.GetMyOrbit(rigidbody.transform, rigidbody.linearVelocity, OrbitalReference));
+        orbitalRenderer.RenderOrbit(GravitySystem.GetMyOrbit(rigidbody.transform, rigidbody.velocity, OrbitalReference));
     }
 
     private void OnDrawGizmosSelected()
@@ -72,9 +72,9 @@ public class OrbitHandler : MonoBehaviour
     {
         var gforce = GravitySystem.GetMyGravityForce(transform, OrbitalReference);
 
-        rigidbody.linearVelocity += gforce * Time.fixedDeltaTime;
+        rigidbody.velocity += gforce * Time.fixedDeltaTime;
 
-        orbit = GravitySystem.GetMyOrbit(transform.transform, rigidbody.linearVelocity, OrbitalReference);
+        orbit = GravitySystem.GetMyOrbit(transform.transform, rigidbody.velocity, OrbitalReference);
 
         if (verbose)
         {

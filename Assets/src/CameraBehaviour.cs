@@ -42,7 +42,7 @@ public class CameraBehaviour : MonoBehaviour
 
     private void Start()
     {
-        var listeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        var listeners = Transform.FindObjectsOfType<AudioListener>();
         if(listeners.Length == 1)
         {
             GetComponent<AudioListener>().enabled = true;

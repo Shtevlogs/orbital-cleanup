@@ -180,10 +180,10 @@ public class PlayerController : MonoBehaviour
 
         rigidbody2D.SetRotation(Vector2.SignedAngle(Vector2.up, currentFacingDir));
 
-        if(rigidbody2D.linearVelocity.magnitude > max_velocity)
+        if(rigidbody2D.velocity.magnitude > max_velocity)
         {
             Debug.Log("Hitting Max V");
-            rigidbody2D.linearVelocity = rigidbody2D.linearVelocity.normalized * max_velocity;
+            rigidbody2D.velocity = rigidbody2D.velocity.normalized * max_velocity;
         }
     }
 }
